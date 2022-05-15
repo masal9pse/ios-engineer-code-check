@@ -103,7 +103,6 @@
 				8B2A2D96259BACA2ACA1E72A /* Pods-iOSEngineerCodeCheckTests.debug.xcconfig */,
 				AAE1B5C988D3DF83CB84F537 /* Pods-iOSEngineerCodeCheckTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -183,6 +182,7 @@
 				BFD945D7244DC5E80012785A /* Sources */,
 				BFD945D8244DC5E80012785A /* Frameworks */,
 				BFD945D9244DC5E80012785A /* Resources */,
+				2827226C283197010076705A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -302,6 +302,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2827226C283197010076705A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" .  --exclude Carthage,Pods \\\n--trimwhitespace nonblank-lines \\\n--indent 4 \\\n--disable strongOutlets,trailingCommas,sortedImports,redundantSelf,unusedArguments,redundantGet\n";
+		};
 		2FE4DECFE0452C22AD28C0F8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
