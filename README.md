@@ -43,3 +43,10 @@ Issues を確認した上、本プロジェクトを [**Duplicate** してくだ
 ## 参考記事
 
 提出された課題の評価ポイントに関しては、[こちらの記事](https://qiita.com/lovee/items/d76c68341ec3e7beb611)に詳しく書かれてありますので、ぜひご覧ください。
+
+## 環境構築
+私の環境では、M1チップを使用したMapBookを使っています。
+
+```bash
+$ arch -x86_64 pod install
+```
