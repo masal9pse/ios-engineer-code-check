@@ -1,14 +1,6 @@
-//
-//  ViewController.swift
-//  iOSEngineerCodeCheck
-//
-//  Created by 史 翔新 on 2020/04/20.
-//  Copyright © 2020 YUMEMI Inc. All rights reserved.
-//
-
 import UIKit
 
-class ViewController: UITableViewController, UISearchBarDelegate {
+class SearchViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var SchBr: UISearchBar!
     
     var repo: [[String: Any]] = []
@@ -57,7 +49,7 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Detail" {
-            let dtl = segue.destination as! ViewController2
+            let dtl = segue.destination as! ShowViewController
             dtl.vc1 = self
         }
     }

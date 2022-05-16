@@ -1,14 +1,6 @@
-//
-//  ViewController2.swift
-//  iOSEngineerCodeCheck
-//
-//  Created by 史 翔新 on 2020/04/21.
-//  Copyright © 2020 YUMEMI Inc. All rights reserved.
-//
-
 import UIKit
 
-class ViewController2: UIViewController {
+class DetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
@@ -17,12 +9,12 @@ class ViewController2: UIViewController {
     @IBOutlet weak var forksCountLable: UILabel!
     @IBOutlet weak var issuesCountLabel: UILabel!
     
-    var vc1: ViewController!
+    var searchViewController: SearchViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let repo = vc1.repo[vc1.idx]
+        let repo = searchViewController.repo[searchViewController.index]
         
         languageLabel.text = "Written in \(repo["language"] as? String ?? "")"
         stargazersCountLable.text = "\(repo["stargazers_count"] as? Int ?? 0) stars"
@@ -33,7 +25,7 @@ class ViewController2: UIViewController {
     }
     
     func getImage() {
-        let repo = vc1.repo[vc1.idx]
+        let repo = searchViewController.repo[searchViewController.index]
         
         titleLabel.text = repo["full_name"] as? String
         
