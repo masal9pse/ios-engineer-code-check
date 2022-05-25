@@ -1,4 +1,5 @@
 import UIKit
+import Alamofire
 
 class SearchViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
@@ -32,18 +33,37 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         
         if searchedWord.count != 0 {
             url = "https://api.github.com/search/repositories?q=\(searchedWord!)"
-            task = URLSession.shared.dataTask(with: URL(string: url)!) { data, res, err in
-                if let data = try! JSONSerialization.jsonObject(with: data!) as? [String: Any] {
-                    if let items = data["items"] as? [[String: Any]] {
-                        self.repo = items
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                        }
+//            task = URLSession.shared.dataTask(with: URL(string: url)!) { data, res, err in
+            ////                if let data = try! JSONSerialization.jsonObject(with: data!) as? [String: Any] {
+//                if let data = try! JSONSerialization.jsonObject(with: data!) as? [Item] {
+//                    let decode = JSONDecoder()
+            ////                    let execute = decode.decode(GitHubApiResponse.self, from: data)
+            ////                    DispatchQueue.main.async {
+            ////                        self.tableView.reloadData()
+            ////                    }
+//                    let result = try decode.decode(Item.self, from: data)
+            ////                    if let items = data["items"] as? [[String: Any]] {
+            ////                        self.repo = items
+            ////                        DispatchQueue.main.async {
+            ////                            self.tableView.reloadData()
+            ////                        }
+            ////                    }
+//                }
+//            }
+//            // これ呼ばなきゃリストが更新されません
+//            task?.resume()
+//            let header: HTTPHeaders = ["Accept": "application/x-www-form-urlencoded"]
+            Alamofire.request(url, method: .get, encoding: JSONEncoding(options: [])).responseJSON { response in
+                // debugPrint(response)
+                do {
+                    guard let data = response.data else {
+                        return
                     }
-                }
+                    let decode = JSONDecoder()
+                    let result = try decode.decode(GitHubApiResponse.self, from: data)
+                    print(result)
+                } catch {}
             }
-            // これ呼ばなきゃリストが更新されません
-            task?.resume()
         }
     }
     
