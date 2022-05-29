@@ -24,7 +24,7 @@ class GitHubApiRepository {
                     return
                 }
                 let result = try! JSONDecoder().decode(GitHubApiResponse.self, from: data)
-                print(result.total_count)
+                print(result.totalCount)
                 print(result.items)
                 comp(result.items)
             } catch {}

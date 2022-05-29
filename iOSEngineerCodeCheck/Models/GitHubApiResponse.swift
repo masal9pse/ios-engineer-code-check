@@ -9,14 +9,25 @@
 import Foundation
 
 class GitHubApiResponse: Codable {
-    let total_count: Int
+    let totalCount: Int
     let items: [Item]
+    
+    enum CodingKeys: String, CodingKey {
+        case totalCount = "total_count"
+        case items
+    }
 }
 
 class Item: Codable {
     let name: String
-    let stargazers_count: Int
+    let stargazersCount: Int
     let language: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case stargazersCount = "stargazers_count"
+        case language
+    }
 }
 
 // class GitHunApiFailResponse

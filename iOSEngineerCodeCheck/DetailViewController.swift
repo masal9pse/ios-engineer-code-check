@@ -19,7 +19,7 @@ class DetailViewController: UIViewController {
 
 //        languageLabel.text = "Written in \(repo["language"] as? String ?? "")"
         languageLabel.text = "Written in \(searchItem.language ?? "")"
-        stargazersCountLable.text = "\(searchItem.stargazers_count) stars"
+        stargazersCountLable.text = "\(searchItem.stargazersCount) stars"
 //        watchersCountLabel.text = "\(repo["wachers_count"] as? Int ?? 0) watchers"
 //        forksCountLable.text = "\(repo["forks_count"] as? Int ?? 0) forks"
 //        issuesCountLabel.text = "\(repo["open_issues_count"] as? Int ?? 0) open issues"
@@ -27,7 +27,6 @@ class DetailViewController: UIViewController {
         let k = 3
     }
     
-
 //    func getImage() {
 //        let repo = searchViewController.repo[searchViewController.index]
 //
