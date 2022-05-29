@@ -45,13 +45,12 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Detail" {
-//            let detail = segue.destination as! DetailViewController
-//            detail.searchViewController = self
+            let detail = segue.destination as! DetailViewController
+            detail.searchViewController = self
         }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return repo.count
         return items.count
     }
     
@@ -60,7 +59,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         let item = items[indexPath.row]
 
         cell.textLabel?.text = item.name
-//        cell.detailTextLabel?.text = repo["language"] as? String ?? ""
+        cell.detailTextLabel?.text = item.language
         cell.tag = indexPath.row
         return cell
     }

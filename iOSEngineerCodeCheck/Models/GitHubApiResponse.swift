@@ -16,6 +16,7 @@ class GitHubApiResponse: Codable {
 class Item: Codable {
     let name: String
     let stargazers_count: Int
+    let language: String?
 }
 
 // class GitHunApiFailResponse
