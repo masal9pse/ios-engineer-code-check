@@ -7,31 +7,27 @@
 //
 
 import Foundation
-import Alamofire
 
 class GitHubApiRepository {
-    func getGitHubApiInfo(searchedWord: String)-> Any {
-        let url = "https://api.github.com/search/repositories?q=\(searchedWord)"
-//        Alamofire.request(url, method: .get, encoding: JSONEncoding(options: [])).responseJSON { response in
-        Alamofire.request(url, method: .get, encoding: JSONEncoding(options: [])).responseJSON {response in
-            // debugPrint(response)
-//            do {
-//                guard let data = response.data else {
-//                    return
-//                }
-//                let decode = JSONDecoder()
-//                let result = try decode.decode(GitHubApiResponse.self, from: data)
-//                print(result)
-////                return result
-//                return Success(code: nil, response: result)
-//            } catch {
-//                return Failure(code: 100, errorResponse: "No Invalid")
-//            }
-            switch response.result {
-            case .success(let value as [Item]):
-                
+    func getGitHubApiResponse(searchedWord: String, comp: @escaping ([Item]) -> Void) {
+        let api = URL(string: "https://api.github.com/search/repositories?q=\(searchedWord)")
+           
+        URLSession.shared.dataTask(with: api!) {
+            data, response, error in
+            if error != nil {
+//                   print(error?.localizedDescription)
+                return
             }
+            do {
+                print(api!)
+                guard let data = data else {
+                    return
+                }
+                let result = try! JSONDecoder().decode(GitHubApiResponse.self, from: data)
+                print(result.total_count)
+                print(result.items)
+                comp(result.items)
+            } catch {}
+        }.resume()
     }
-        // 一度取得したresultを外に出してreturnしないとだめ？
-}
 }
