@@ -5,7 +5,6 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var items: [Item] = []
-    let gitHubApiResponse = GitHubApiRepository()
     
     var task: URLSessionTask?
     var searchedWord: String!
@@ -14,13 +13,11 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         searchBar.text = "GitHubのリポジトリを検索できるよー"
         searchBar.delegate = self
     }
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        // ↓こうすれば初期のテキストを消せる
         searchBar.text = ""
         return true
     }
@@ -30,9 +27,10 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchedWord = searchBar.text!
+        searchedWord = searchBar.text ?? ""
         
-        if searchedWord.count != 0 {
+        if !searchedWord.isEmpty {
+            let gitHubApiResponse = GitHubApiRepository()
             gitHubApiResponse.getGitHubApiResponse(searchedWord: searchedWord, comp: { data in
                 self.items = data
                 DispatchQueue.main.async {
@@ -40,7 +38,6 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
                 }
             })
         }
-//        task?.resume()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -65,7 +62,6 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 画面遷移時に呼ばれる
         index = indexPath.row
         performSegue(withIdentifier: "Detail", sender: self)
     }
