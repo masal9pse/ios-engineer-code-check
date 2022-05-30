@@ -31,12 +31,17 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         
         if !searchedWord.isEmpty {
             let gitHubApiResponse = GitHubApiRepository()
-            gitHubApiResponse.getGitHubApiResponse(searchedWord: searchedWord, comp: { data in
-                self.items = data
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
+            Task.detached {
+                do {
+                    let response = try await gitHubApiResponse.getGitHubApiResponse(searchedWord: self.searchedWord)
+                    DispatchQueue.main.async {
+                        self.items = response
+                        self.tableView.reloadData()
+                    }
+                } catch {
+                    print(error)
                 }
-            })
+            }
         }
     }
     
