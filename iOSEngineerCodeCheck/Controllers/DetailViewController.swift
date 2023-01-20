@@ -31,12 +31,8 @@ class DetailViewController: UIViewController {
         
         if let owner = searchedItem.owner {
             if let imageUrl = owner.avatarUrl {
-                URLSession.shared.dataTask(with: URL(string: imageUrl)!) { data, response, error in
-                    let image = UIImage(data: data!)!
-                    DispatchQueue.main.async {
-                        self.imageView.image = image
-                    }
-                }.resume()
+                let image = UIImage(url: imageUrl)
+                self.imageView.image = image
             }
         }
     }
