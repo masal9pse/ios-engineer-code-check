@@ -10,13 +10,10 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var issuesCountLabel: UILabel!
 
     // すでに値が入っていることが確定しているので暗黙的アンラップ型を使用
-    var searchViewController: SearchViewController!
     var searchedItem: Item!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        searchedItem = searchViewController.items[searchViewController.index]
 
         languageLabel.text = "Written in \(searchedItem.language ?? "")"
         stargazersCountLable.text = "\(searchedItem.stargazersCount) stars"
