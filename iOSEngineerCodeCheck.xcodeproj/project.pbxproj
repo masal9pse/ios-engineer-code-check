@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2612B64D3A1B962D34784E52 /* Pods_iOSEngineerCodeCheckTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6577B57DB327A6CF81D2F610 /* Pods_iOSEngineerCodeCheckTests.framework */; };
 		289B9E6529797D9F0092E955 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B9E6429797D9F0092E955 /* UIImage.swift */; };
+		289B9E69297B06570092E955 /* DetailPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289B9E68297B06570092E955 /* DetailPage.storyboard */; };
 		28D52E2C283B933E00433CE6 /* GitHubApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D52E2B283B933E00433CE6 /* GitHubApiResponse.swift */; };
 		28D52E2F283BADB300433CE6 /* GitHubApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D52E2E283BADB300433CE6 /* GitHubApiRepository.swift */; };
 		28D52E31283BAFDA00433CE6 /* ApiStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D52E30283BAFDA00433CE6 /* ApiStatus.swift */; };
@@ -18,9 +19,8 @@
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
 		BFD945E3244DC5E80012785A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E2244DC5E80012785A /* SearchViewController.swift */; };
-		BFD945E6244DC5E80012785A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD945E4244DC5E80012785A /* Main.storyboard */; };
+		BFD945E6244DC5E80012785A /* SearchPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD945E4244DC5E80012785A /* SearchPage.storyboard */; };
 		BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFD945E7244DC5EB0012785A /* Assets.xcassets */; };
-		BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */; };
 		BFD945F6244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945F5244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift */; };
 		BFD94601244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +47,7 @@
 		0BBF8DEF903810FCFF88E0DF /* Pods_iOSEngineerCodeCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSEngineerCodeCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F38BC9B83333E001A1CEF1E /* Pods-iOSEngineerCodeCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheck.debug.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheck/Pods-iOSEngineerCodeCheck.debug.xcconfig"; sourceTree = "<group>"; };
 		289B9E6429797D9F0092E955 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		289B9E68297B06570092E955 /* DetailPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailPage.storyboard; sourceTree = "<group>"; };
 		28D52E2B283B933E00433CE6 /* GitHubApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApiResponse.swift; sourceTree = "<group>"; };
 		28D52E2E283BADB300433CE6 /* GitHubApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApiRepository.swift; sourceTree = "<group>"; };
 		28D52E30283BAFDA00433CE6 /* ApiStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiStatus.swift; sourceTree = "<group>"; };
@@ -61,9 +62,8 @@
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFD945E0244DC5E80012785A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BFD945E2244DC5E80012785A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		BFD945E5244DC5E80012785A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BFD945E5244DC5E80012785A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SearchPage.storyboard; sourceTree = "<group>"; };
 		BFD945E7244DC5EB0012785A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BFD945EA244DC5EB0012785A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFD945EC244DC5EB0012785A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFD945F1244DC5EB0012785A /* iOSEngineerCodeCheckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSEngineerCodeCheckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945F5244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEngineerCodeCheckTests.swift; sourceTree = "<group>"; };
@@ -124,8 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
-				BFD945E4244DC5E80012785A /* Main.storyboard */,
-				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
+				BFD945E4244DC5E80012785A /* SearchPage.storyboard */,
+				289B9E68297B06570092E955 /* DetailPage.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -333,9 +333,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
-				BFD945E6244DC5E80012785A /* Main.storyboard in Resources */,
+				289B9E69297B06570092E955 /* DetailPage.storyboard in Resources */,
+				BFD945E6244DC5E80012785A /* SearchPage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,20 +523,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BFD945E4244DC5E80012785A /* Main.storyboard */ = {
+		BFD945E4244DC5E80012785A /* SearchPage.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BFD945E5244DC5E80012785A /* Base */,
 			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BFD945EA244DC5EB0012785A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
+			name = SearchPage.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

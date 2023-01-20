@@ -44,13 +44,6 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Detail" {
-            let detail = segue.destination as! DetailViewController
-            detail.searchViewController = self
-        }
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -67,6 +60,9 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         index = indexPath.row
-        performSegue(withIdentifier: "Detail", sender: self)
+        let storyboard = UIStoryboard(name: "DetailPage", bundle: nil)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        nextVC.searchedItem = self.items[index]
+        navigationController?.pushViewController(nextVC, animated: true)
     }
 }
