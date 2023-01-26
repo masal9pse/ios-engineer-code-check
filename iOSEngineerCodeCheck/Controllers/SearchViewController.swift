@@ -20,11 +20,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         searchBar.text = ""
         return true
     }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        task?.cancel()
-    }
-    
+            
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchedWord = searchBar.text ?? ""
         
@@ -42,6 +38,8 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
                 }
             }
         }
+        // キーボードを下ろす。
+        view.endEditing(true)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
