@@ -2,7 +2,7 @@ import UIKit
 import Alamofire
 
 class SearchViewController: UITableViewController, UISearchBarDelegate {
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet private weak var searchBar: UISearchBar!
     
     var items: [Item] = []
     var searchedWord: String = ""
