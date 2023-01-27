@@ -5,8 +5,6 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var items: [Item] = []
-    
-    var task: URLSessionTask?
     var searchedWord: String = ""
     var index: Int = 0
     
@@ -14,6 +12,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         super.viewDidLoad()
         searchBar.text = "GitHubのリポジトリを検索できるよー"
         searchBar.delegate = self
+        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
     }
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
@@ -47,13 +46,12 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        let item = items[indexPath.row]
-
-        cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = item.language
-        cell.tag = indexPath.row
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? TableViewCell {
+            let item = items[indexPath.row]
+            cell.setup(text: item.name)
+            return cell
+        }
+        return UITableViewCell()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
