@@ -17,12 +17,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="432" height="126"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpF-oq-MFq">
-                        <rect key="frame" x="130" y="10" width="287" height="110"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mGv-bW-7RH">
                         <rect key="frame" x="15" y="15" width="100" height="100"/>
                         <constraints>
@@ -30,21 +24,25 @@
                             <constraint firstAttribute="width" constant="100" id="LuK-9K-Lfh"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxs-sT-LKa">
+                        <rect key="frame" x="130" y="54.666666666666657" width="287" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="OpF-oq-MFq" secondAttribute="bottom" constant="89" id="1yd-is-A6u"/>
                     <constraint firstItem="mGv-bW-7RH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="9DR-nx-GR5"/>
-                    <constraint firstItem="OpF-oq-MFq" firstAttribute="leading" secondItem="mGv-bW-7RH" secondAttribute="trailing" constant="15" id="EOH-PL-0ng"/>
                     <constraint firstAttribute="bottom" secondItem="mGv-bW-7RH" secondAttribute="bottom" constant="15" id="Lq1-6j-KeZ"/>
-                    <constraint firstItem="OpF-oq-MFq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Q1k-M3-ZvF"/>
-                    <constraint firstItem="OpF-oq-MFq" firstAttribute="centerY" secondItem="mGv-bW-7RH" secondAttribute="centerY" id="Thc-AY-INi"/>
+                    <constraint firstItem="hxs-sT-LKa" firstAttribute="centerY" secondItem="mGv-bW-7RH" secondAttribute="centerY" id="g0z-ao-paD"/>
                     <constraint firstItem="mGv-bW-7RH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="lM2-xr-PDR"/>
-                    <constraint firstAttribute="trailing" secondItem="OpF-oq-MFq" secondAttribute="trailing" constant="15" id="uDG-lh-qik"/>
+                    <constraint firstAttribute="trailing" secondItem="hxs-sT-LKa" secondAttribute="trailing" constant="15" id="rXf-7O-1Ey"/>
+                    <constraint firstItem="hxs-sT-LKa" firstAttribute="leading" secondItem="mGv-bW-7RH" secondAttribute="trailing" constant="15" id="vTz-1Y-jQG"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="label" destination="OpF-oq-MFq" id="0kj-p3-rge"/>
+                <outlet property="label" destination="hxs-sT-LKa" id="jo0-gw-DEY"/>
                 <outlet property="smallImageView" destination="mGv-bW-7RH" id="5iN-Ma-Z95"/>
             </connections>
             <point key="canvasLocation" x="215.26717557251908" y="-40.140845070422536"/>
