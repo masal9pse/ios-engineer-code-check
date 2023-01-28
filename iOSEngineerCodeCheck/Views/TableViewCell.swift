@@ -8,8 +8,9 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+final class TableViewCell: UITableViewCell {
     @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var smallImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,7 +22,13 @@ class TableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setup(text: String) {
-        label.text = text
+    func setup(item: Item) {
+        label.text = item.name
+        if let owner = item.owner {
+            if let imageUrl = owner.avatarUrl {
+                let image = UIImage(url: imageUrl)
+                self.smallImageView.image = image
+            }
+        }
     }
 }

@@ -48,7 +48,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? TableViewCell {
             let item = items[indexPath.row]
-            cell.setup(text: item.name)
+            cell.setup(item: item)
             return cell
         }
         return UITableViewCell()
