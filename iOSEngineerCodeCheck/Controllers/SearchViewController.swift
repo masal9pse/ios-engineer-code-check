@@ -1,9 +1,8 @@
 import UIKit
-import Alamofire
 
-class SearchViewController: UITableViewController, UISearchBarDelegate {
+class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     @IBOutlet private weak var searchBar: UISearchBar!
-    
+    @IBOutlet var tableView: UITableView!
     var items: [Item] = []
     var searchedWord: String = ""
     var index: Int = 0
@@ -12,6 +11,8 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         super.viewDidLoad()
         searchBar.text = "GitHubのリポジトリを検索できるよー"
         searchBar.delegate = self
+        tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
     }
     
@@ -41,11 +42,11 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         view.endEditing(true)
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? TableViewCell {
             let item = items[indexPath.row]
             cell.setup(item: item)
@@ -54,7 +55,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         return UITableViewCell()
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         index = indexPath.row
         let storyboard = UIStoryboard(name: "DetailPage", bundle: nil)
         let nextVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
