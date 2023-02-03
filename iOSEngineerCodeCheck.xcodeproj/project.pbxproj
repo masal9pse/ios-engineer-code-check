@@ -12,7 +12,6 @@
 		289B9E69297B06570092E955 /* DetailPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289B9E68297B06570092E955 /* DetailPage.storyboard */; };
 		28D52E2C283B933E00433CE6 /* GitHubApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D52E2B283B933E00433CE6 /* GitHubApiResponse.swift */; };
 		28D52E2F283BADB300433CE6 /* GitHubApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D52E2E283BADB300433CE6 /* GitHubApiRepository.swift */; };
-		28D52E31283BAFDA00433CE6 /* ApiStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D52E30283BAFDA00433CE6 /* ApiStatus.swift */; };
 		294063B12984409B003BE83E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294063AF2984409B003BE83E /* TableViewCell.swift */; };
 		294063B22984409B003BE83E /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 294063B02984409B003BE83E /* TableViewCell.xib */; };
 		3AA98959B6087FD044B1CCB6 /* Pods_iOSEngineerCodeCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BBF8DEF903810FCFF88E0DF /* Pods_iOSEngineerCodeCheck.framework */; };
@@ -52,7 +51,6 @@
 		289B9E68297B06570092E955 /* DetailPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailPage.storyboard; sourceTree = "<group>"; };
 		28D52E2B283B933E00433CE6 /* GitHubApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApiResponse.swift; sourceTree = "<group>"; };
 		28D52E2E283BADB300433CE6 /* GitHubApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApiRepository.swift; sourceTree = "<group>"; };
-		28D52E30283BAFDA00433CE6 /* ApiStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiStatus.swift; sourceTree = "<group>"; };
 		294063AF2984409B003BE83E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		294063B02984409B003BE83E /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		2B0BF841C07C027021321078 /* Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests/Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				28D52E2B283B933E00433CE6 /* GitHubApiResponse.swift */,
-				28D52E30283BAFDA00433CE6 /* ApiStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -489,7 +486,6 @@
 			files = (
 				BFD945E3244DC5E80012785A /* SearchViewController.swift in Sources */,
 				289B9E6529797D9F0092E955 /* UIImage.swift in Sources */,
-				28D52E31283BAFDA00433CE6 /* ApiStatus.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */,
 				294063B12984409B003BE83E /* TableViewCell.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
