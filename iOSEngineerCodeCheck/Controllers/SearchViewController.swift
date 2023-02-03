@@ -42,7 +42,9 @@ final class SearchViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? TableViewCell {
             let item = items[indexPath.row]
-            cell.setup(item: item)
+            Task {
+                await cell.setup(item: item)
+            }
             return cell
         }
         return UITableViewCell()

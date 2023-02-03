@@ -9,11 +9,11 @@
 import UIKit
 
 public extension UIImage {
-    convenience init(url: String) {
+    convenience init(url: String) async {
         let url = URL(string: url)
         do {
-            let data = try Data(contentsOf: url!)
-            self.init(data: data)!
+            let data = try await URLSession.shared.data(from: url!)
+            self.init(data: data.0)!
             return
         } catch let err {
             print("Error : \(err.localizedDescription)")

@@ -20,15 +20,17 @@ final class DetailViewController: UIViewController {
         watchersCountLabel.text = "\(searchedItem.watchersCount) watchers"
         forksCountLable.text = "\(searchedItem.forksCount) forks"
         issuesCountLabel.text = "\(searchedItem.openIssuesCount) open issues"
-        getImage()
+        Task {
+            await getImage()
+        }
     }
     
-    func getImage() {
+    func getImage() async {
         titleLabel.text = searchedItem.fullName
         
         if let owner = searchedItem.owner {
             if let imageUrl = owner.avatarUrl {
-                let image = UIImage(url: imageUrl)
+                let image = await UIImage(url: imageUrl)
                 self.imageView.image = image
             }
         }

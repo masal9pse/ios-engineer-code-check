@@ -22,11 +22,11 @@ final class TableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setup(item: Item) {
+    func setup(item: Item) async {
         label.text = item.name
         if let owner = item.owner {
             if let imageUrl = owner.avatarUrl {
-                let image = UIImage(url: imageUrl)
+                let image = await UIImage(url: imageUrl)
                 self.smallImageView.image = image
             }
         }
