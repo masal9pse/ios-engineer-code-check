@@ -2,7 +2,7 @@ import UIKit
 
 final class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     @IBOutlet private weak var searchBar: UISearchBar!
-    @IBOutlet private var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     var items: [Item] = []
     
     override func viewDidLoad() {
