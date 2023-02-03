@@ -1,13 +1,13 @@
 import UIKit
 
-class DetailViewController: UIViewController {
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var languageLabel: UILabel!
-    @IBOutlet weak var stargazersCountLable: UILabel!
-    @IBOutlet weak var watchersCountLabel: UILabel!
-    @IBOutlet weak var forksCountLable: UILabel!
-    @IBOutlet weak var issuesCountLabel: UILabel!
+final class DetailViewController: UIViewController {
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var languageLabel: UILabel!
+    @IBOutlet private weak var stargazersCountLable: UILabel!
+    @IBOutlet private weak var watchersCountLabel: UILabel!
+    @IBOutlet private weak var forksCountLable: UILabel!
+    @IBOutlet private weak var issuesCountLabel: UILabel!
 
     // すでに値が入っていることが確定しているので暗黙的アンラップ型を使用
     var searchedItem: Item!

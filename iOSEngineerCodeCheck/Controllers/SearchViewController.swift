@@ -1,8 +1,8 @@
 import UIKit
 
-class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+final class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     @IBOutlet private weak var searchBar: UISearchBar!
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet private var tableView: UITableView!
     var items: [Item] = []
     
     override func viewDidLoad() {
@@ -14,7 +14,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
     }
     
-            
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let searchedWord = searchBar.text ?? ""
         
