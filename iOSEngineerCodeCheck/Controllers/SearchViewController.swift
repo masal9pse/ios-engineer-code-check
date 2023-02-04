@@ -4,6 +4,7 @@ final class SearchViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
     var items: [Item] = []
+    let indicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,19 +13,29 @@ final class SearchViewController: UIViewController, UITableViewDataSource, UITab
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
+        // 表示位置を設定（画面中央）
+        indicator.center = view.center
+        // インジケーターのスタイルを指定（白色＆大きいサイズ）
+        indicator.style = .whiteLarge
+        // インジケーターの色を設定（青色）
+        indicator.color = UIColor(red: 44 / 255, green: 169 / 255, blue: 225 / 255, alpha: 1)
+        // インジケーターを View に追加
+        view.addSubview(indicator)
+//        indicator.startAnimating()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let searchedWord = searchBar.text ?? ""
-        
+        indicator.startAnimating()
         if !searchedWord.isEmpty {
             let gitHubApiResponse = GitHubApiRepository()
-            Task.detached {
+            Task {
                 do {
                     let response = try await gitHubApiResponse.getGitHubApiResponse(searchedWord: searchedWord)
                     DispatchQueue.main.async {
                         self.items = response
                         self.tableView.reloadData()
+                        self.indicator.stopAnimating()
                     }
                 } catch {
                     print(error)
