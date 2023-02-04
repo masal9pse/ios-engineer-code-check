@@ -21,12 +21,10 @@ final class DetailViewController: UIViewController {
         watchersCountLabel.text = "\(searchedItem.watchersCount) watchers"
         forksCountLable.text = "\(searchedItem.forksCount) forks"
         issuesCountLabel.text = "\(searchedItem.openIssuesCount) open issues"
-        Task {
-            await getImage()
-        }
+        getImage()
     }
     
-    func getImage() async {
+    func getImage() {
         titleLabel.text = searchedItem.fullName
         
         if let owner = searchedItem.owner {

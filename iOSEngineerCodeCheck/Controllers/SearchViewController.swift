@@ -21,7 +21,6 @@ final class SearchViewController: UIViewController, UITableViewDataSource, UITab
         indicator.color = UIColor(red: 44 / 255, green: 169 / 255, blue: 225 / 255, alpha: 1)
         // インジケーターを View に追加
         view.addSubview(indicator)
-//        indicator.startAnimating()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -53,9 +52,7 @@ final class SearchViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? TableViewCell {
             let item = items[indexPath.row]
-            Task {
-                await cell.setup(item: item)
-            }
+            cell.setup(item: item)
             return cell
         }
         return UITableViewCell()
