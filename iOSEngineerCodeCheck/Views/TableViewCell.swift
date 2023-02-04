@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 final class TableViewCell: UITableViewCell {
     @IBOutlet private weak var label: UILabel!
@@ -26,8 +27,7 @@ final class TableViewCell: UITableViewCell {
         label.text = item.name
         if let owner = item.owner {
             if let imageUrl = owner.avatarUrl {
-                let image = UIImage(url: imageUrl)
-                self.smallImageView.image = image
+                Nuke.loadImage(with: URL(string: imageUrl), into: self.smallImageView)
             }
         }
     }
