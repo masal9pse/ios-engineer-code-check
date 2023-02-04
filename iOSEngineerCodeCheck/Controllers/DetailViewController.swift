@@ -1,4 +1,5 @@
 import UIKit
+import Nuke
 
 final class DetailViewController: UIViewController {
     @IBOutlet private weak var imageView: UIImageView!
@@ -30,8 +31,7 @@ final class DetailViewController: UIViewController {
         
         if let owner = searchedItem.owner {
             if let imageUrl = owner.avatarUrl {
-                let image = await UIImage(url: imageUrl)
-                self.imageView.image = image
+                Nuke.loadImage(with: URL(string: imageUrl), into: self.imageView)
             }
         }
     }
