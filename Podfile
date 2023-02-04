@@ -7,7 +7,7 @@ target 'iOSEngineerCodeCheck' do
 
   # Pods for iOSEngineerCodeCheck
   pod 'SwiftFormat/CLI'
-  pod 'Alamofire', '~> 4.7'
+  pod 'Nuke'
 
   target 'iOSEngineerCodeCheckTests' do
     inherit! :search_paths
