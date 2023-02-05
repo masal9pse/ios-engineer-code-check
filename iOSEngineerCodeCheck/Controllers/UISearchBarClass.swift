@@ -10,11 +10,11 @@ import UIKit
 
 class UISearchBarClass: UISearchBar, UISearchBarDelegate {
     var presentController = UIViewController()
-//    var  = UIViewController()
+    var presentTableView = TableViewClass()
     
-    func initSearchBar(withContentController: UIViewController) {
+    func initSearchBar(withContentController: UIViewController, withContentTableView: TableViewClass) {
         presentController = withContentController
-//        self.delegate = self
+        presentTableView = withContentTableView
         self.delegate = self
         self.placeholder = "GitHubのリポジトリを検索できます"
 //        searchBar.placeholder = "GitHubのリポジトリを検索できます"
@@ -28,9 +28,8 @@ class UISearchBarClass: UISearchBar, UISearchBarDelegate {
             Task {
                 do {
                     let response = try await gitHubApiResponse.getGitHubApiResponse(searchedWord: searchedWord)
-                    let k = 3
-                    let ki = 3
-//                    tableView.reloadTableViewWith(withData: response, withContentController: self)
+//                    initSearchBar(withContentController: presentController, withContentTableView: presentTableView)
+                    presentTableView.reloadTableViewWith(withData: response, withContentController: presentController)
 //                    DispatchQueue.main.async {
 //                        self.indicator.stopAnimating()
 //                    }
