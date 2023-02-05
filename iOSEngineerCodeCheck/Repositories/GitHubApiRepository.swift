@@ -10,19 +10,14 @@ import Foundation
 
 /// WebAPIのエラー
 enum WebApiError: Error {
-    /// トークンが不正
-    case invalidToken
-    /// パラメータが不正
-    case invalidParameters
-    /// ユーザが見つからない
-    case userNotFound
+    case dataNotFound
 }
 
 class GitHubApiRepository {
     func getGitHubApiResponse(searchedWord: String) async throws -> [Item] {
         let api = URL(string: "https://api.github.com/search/repositories?q=\(searchedWord)")
         guard let api = api else {
-            throw WebApiError.userNotFound
+            throw WebApiError.dataNotFound
         }
         let (data, _) = try await URLSession.shared.data(from: api, delegate: nil)
         let response = try? JSONDecoder().decode(GitHubApiResponse.self, from: data)

@@ -12,7 +12,7 @@
         <scene sceneID="0Yw-Vc-k2Q">
             <objects>
                 <tableViewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MOh-CZ-3ki" userLabel="TableViewAndSearchBar" customClass="SearchViewController" customModule="iOSEngineerCodeCheck" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fpt-Ev-QNW" customClass="TableViewClass" customModule="iOSEngineerCodeCheck" customModuleProvider="target">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fpt-Ev-QNW" userLabel="tableview" customClass="TableViewClass" customModule="iOSEngineerCodeCheck" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -28,7 +28,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="GitHubリポジトリ検索App" id="ktq-eC-ZBq"/>
                     <connections>
-                        <outlet property="searchBar" destination="Fpt-Ev-QNW" id="9ye-MF-KfV"/>
+                        <outlet property="searchBar" destination="6rq-CD-Hob" id="6d9-MG-yNI"/>
                         <outlet property="tableView" destination="Fpt-Ev-QNW" id="4dE-oy-abM"/>
                     </connections>
                 </tableViewController>

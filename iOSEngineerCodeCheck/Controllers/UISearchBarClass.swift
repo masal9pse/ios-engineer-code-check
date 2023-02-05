@@ -29,6 +29,7 @@ class UISearchBarClass: UISearchBar, UISearchBarDelegate {
                 do {
                     let response = try await gitHubApiResponse.getGitHubApiResponse(searchedWord: searchedWord)
                     let k = 3
+                    let ki = 3
 //                    tableView.reloadTableViewWith(withData: response, withContentController: self)
 //                    DispatchQueue.main.async {
 //                        self.indicator.stopAnimating()
