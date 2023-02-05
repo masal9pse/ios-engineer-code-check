@@ -2,7 +2,7 @@ import UIKit
 
 // final class SearchViewController: UIViewController, UISearchBarDelegate {
 final class SearchViewController: UIViewController {
-    @IBOutlet private weak var searchBar: UISearchBarClass!
+    @IBOutlet weak var searchBar: UISearchBarClass!
     @IBOutlet weak var tableView: TableViewClass!
     
     var items: [Item] = []
@@ -14,7 +14,7 @@ final class SearchViewController: UIViewController {
 //        searchBar.initSearchBar(withContentController: self)
         searchBar.initSearchBar(withContentController: self, withContentTableView: tableView)
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
-//        searchBar.initSearchBar(withContentController: self)
+        ////        searchBar.initSearchBar(withContentController: self)
         tableView.reloadTableViewWith(withData: [], withContentController: self)
 //        searchBar.initSearchBar(withContentController: self)
 //        searchBar.placeholder = "GitHubのリポジトリを検索できます"
