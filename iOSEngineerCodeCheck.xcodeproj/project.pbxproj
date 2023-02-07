@@ -11,6 +11,7 @@
 		289B9E69297B06570092E955 /* DetailPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289B9E68297B06570092E955 /* DetailPage.storyboard */; };
 		28D52E2C283B933E00433CE6 /* GitHubApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D52E2B283B933E00433CE6 /* GitHubApiResponse.swift */; };
 		28D52E2F283BADB300433CE6 /* GitHubApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D52E2E283BADB300433CE6 /* GitHubApiRepository.swift */; };
+		290F6BA1298F5BA200B12C75 /* UISearchBarClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290F6BA0298F5BA200B12C75 /* UISearchBarClass.swift */; };
 		293EB45F298ED8B5007D6771 /* TableViewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293EB45E298ED8B5007D6771 /* TableViewClass.swift */; };
 		294063B12984409B003BE83E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294063AF2984409B003BE83E /* TableViewCell.swift */; };
 		294063B22984409B003BE83E /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 294063B02984409B003BE83E /* TableViewCell.xib */; };
@@ -50,6 +51,7 @@
 		289B9E68297B06570092E955 /* DetailPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailPage.storyboard; sourceTree = "<group>"; };
 		28D52E2B283B933E00433CE6 /* GitHubApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApiResponse.swift; sourceTree = "<group>"; };
 		28D52E2E283BADB300433CE6 /* GitHubApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApiRepository.swift; sourceTree = "<group>"; };
+		290F6BA0298F5BA200B12C75 /* UISearchBarClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarClass.swift; sourceTree = "<group>"; };
 		293EB45E298ED8B5007D6771 /* TableViewClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewClass.swift; sourceTree = "<group>"; };
 		294063AF2984409B003BE83E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		294063B02984409B003BE83E /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				BFD945E2244DC5E80012785A /* SearchViewController.swift */,
 				BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */,
 				293EB45E298ED8B5007D6771 /* TableViewClass.swift */,
+				290F6BA0298F5BA200B12C75 /* UISearchBarClass.swift */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
 			);
@@ -482,6 +485,7 @@
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				28D52E2F283BADB300433CE6 /* GitHubApiRepository.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
+				290F6BA1298F5BA200B12C75 /* UISearchBarClass.swift in Sources */,
 				293EB45F298ED8B5007D6771 /* TableViewClass.swift in Sources */,
 				28D52E2C283B933E00433CE6 /* GitHubApiResponse.swift in Sources */,
 			);
