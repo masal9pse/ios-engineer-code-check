@@ -8,31 +8,38 @@
 
 import UIKit
 
-class UISearchBarClass: UISearchBar, UISearchBarDelegate {
+final class UISearchBarClass: UISearchBar, UISearchBarDelegate {
     var presentController = UIViewController()
     var presentTableView = TableViewClass()
+    let indicator = UIActivityIndicatorView()
     
     func initSearchBar(withContentController: UIViewController, withContentTableView: TableViewClass) {
         presentController = withContentController
         presentTableView = withContentTableView
         self.delegate = self
         self.placeholder = "GitHubのリポジトリを検索できます"
-//        searchBar.placeholder = "GitHubのリポジトリを検索できます"
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let searchedWord = searchBar.text ?? ""
-//        indicator.startAnimating()
+        indicator.center = presentController.view.center
+        // インジケーターのスタイルを指定（白色＆大きいサイズ）
+        indicator.style = .whiteLarge
+        // インジケーターの色を設定（青色）
+        indicator.color = UIColor(red: 44 / 255, green: 169 / 255, blue: 225 / 255, alpha: 1)
+        // インジケーターを View に追加
+        presentController.view.addSubview(indicator)
+        indicator.startAnimating()
+        // ビジネスロジックなのでModelに記載する。
         if !searchedWord.isEmpty {
             let gitHubApiResponse = GitHubApiRepository()
             Task {
                 do {
                     let response = try await gitHubApiResponse.getGitHubApiResponse(searchedWord: searchedWord)
-//                    initSearchBar(withContentController: presentController, withContentTableView: presentTableView)
                     presentTableView.reloadTableViewWith(withData: response, withContentController: presentController)
-//                    DispatchQueue.main.async {
-//                        self.indicator.stopAnimating()
-//                    }
+                    DispatchQueue.main.async {
+                        self.indicator.stopAnimating()
+                    }
                 } catch {
                     print(error)
                 }
