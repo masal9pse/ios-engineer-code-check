@@ -24,7 +24,7 @@ final class DetailViewController: UIViewController {
         getImage()
     }
     
-    func getImage() {
+    private func getImage() -> () {
         titleLabel.text = searchedItem.fullName
         
         if let owner = searchedItem.owner {

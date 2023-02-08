@@ -8,12 +8,12 @@
 
 import UIKit
 
-final class UISearchBarClass: UISearchBar, UISearchBarDelegate {
+final class UISearchBarController: UISearchBar, UISearchBarDelegate {
     var presentController = UIViewController()
-    var presentTableView = TableViewClass()
+    var presentTableView = TableViewController()
     let indicator = UIActivityIndicatorView()
     
-    func initSearchBar(withContentController: UIViewController, withContentTableView: TableViewClass) {
+    func initSearchBar(withContentController: UIViewController, withContentTableView: TableViewController) {
         presentController = withContentController
         presentTableView = withContentTableView
         self.delegate = self

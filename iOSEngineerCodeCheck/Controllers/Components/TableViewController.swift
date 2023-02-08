@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewClass: UITableView, UITableViewDataSource, UITableViewDelegate {
+final class TableViewController: UITableView, UITableViewDataSource, UITableViewDelegate {
     var items: [Item] = []
     var presentController = UIViewController()
     func reloadTableViewWith(withData: [Item], withContentController: UIViewController) {
@@ -24,7 +24,7 @@ class TableViewClass: UITableView, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? TableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? TableViewCellController {
             let item = items[indexPath.row]
             cell.setup(item: item)
             return cell

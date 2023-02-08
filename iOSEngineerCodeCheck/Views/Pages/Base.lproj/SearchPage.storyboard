@@ -17,14 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="l3q-Nw-JBd" customClass="UISearchBarClass" customModule="iOSEngineerCodeCheck" customModuleProvider="target">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="l3q-Nw-JBd" customClass="UISearchBarController" customModule="iOSEngineerCodeCheck" customModuleProvider="target">
                                 <rect key="frame" x="16" y="44" width="304" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="MlL-AZ-9m1" id="zes-Jw-WWy"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1pG-r6-ZiN" customClass="TableViewClass" customModule="iOSEngineerCodeCheck" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1pG-r6-ZiN" customClass="TableViewController" customModule="iOSEngineerCodeCheck" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="100" width="320" height="468"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
