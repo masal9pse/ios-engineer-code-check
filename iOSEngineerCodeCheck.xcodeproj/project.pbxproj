@@ -11,8 +11,10 @@
 		289B9E69297B06570092E955 /* DetailPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289B9E68297B06570092E955 /* DetailPage.storyboard */; };
 		28D52E2C283B933E00433CE6 /* GitHubApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D52E2B283B933E00433CE6 /* GitHubApiResponse.swift */; };
 		28D52E2F283BADB300433CE6 /* GitHubApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D52E2E283BADB300433CE6 /* GitHubApiRepository.swift */; };
-		293EB45F298ED8B5007D6771 /* TableViewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293EB45E298ED8B5007D6771 /* TableViewClass.swift */; };
-		294063B12984409B003BE83E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294063AF2984409B003BE83E /* TableViewCell.swift */; };
+		290F6BA1298F5BA200B12C75 /* UISearchBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290F6BA0298F5BA200B12C75 /* UISearchBarController.swift */; };
+		29239100299275490024CCB0 /* UISearchBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292390FF299275490024CCB0 /* UISearchBarModel.swift */; };
+		293EB45F298ED8B5007D6771 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293EB45E298ED8B5007D6771 /* TableViewController.swift */; };
+		294063B12984409B003BE83E /* TableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294063AF2984409B003BE83E /* TableViewCellController.swift */; };
 		294063B22984409B003BE83E /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 294063B02984409B003BE83E /* TableViewCell.xib */; };
 		3AA98959B6087FD044B1CCB6 /* Pods_iOSEngineerCodeCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BBF8DEF903810FCFF88E0DF /* Pods_iOSEngineerCodeCheck.framework */; };
 		BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */; };
@@ -50,8 +52,10 @@
 		289B9E68297B06570092E955 /* DetailPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailPage.storyboard; sourceTree = "<group>"; };
 		28D52E2B283B933E00433CE6 /* GitHubApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApiResponse.swift; sourceTree = "<group>"; };
 		28D52E2E283BADB300433CE6 /* GitHubApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApiRepository.swift; sourceTree = "<group>"; };
-		293EB45E298ED8B5007D6771 /* TableViewClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewClass.swift; sourceTree = "<group>"; };
-		294063AF2984409B003BE83E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		290F6BA0298F5BA200B12C75 /* UISearchBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarController.swift; sourceTree = "<group>"; };
+		292390FF299275490024CCB0 /* UISearchBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarModel.swift; sourceTree = "<group>"; };
+		293EB45E298ED8B5007D6771 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		294063AF2984409B003BE83E /* TableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellController.swift; sourceTree = "<group>"; };
 		294063B02984409B003BE83E /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		2B0BF841C07C027021321078 /* Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests/Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		61FC2CD75642AA8CF4EAAC00 /* Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.release.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests/Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,9 +110,9 @@
 		289B9E66297AFAE60092E955 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				292390FE2992748E0024CCB0 /* Components */,
 				BFD945E2244DC5E80012785A /* SearchViewController.swift */,
 				BF0A658C244F2A3B00280FA6 /* DetailViewController.swift */,
-				293EB45E298ED8B5007D6771 /* TableViewClass.swift */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
 			);
@@ -118,11 +122,9 @@
 		289B9E67297AFB180092E955 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				292390FD299271BF0024CCB0 /* Pages */,
+				292390FC299271640024CCB0 /* Components */,
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
-				BFD945E4244DC5E80012785A /* SearchPage.storyboard */,
-				294063AF2984409B003BE83E /* TableViewCell.swift */,
-				294063B02984409B003BE83E /* TableViewCell.xib */,
-				289B9E68297B06570092E955 /* DetailPage.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				28D52E2B283B933E00433CE6 /* GitHubApiResponse.swift */,
+				292390FF299275490024CCB0 /* UISearchBarModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -141,6 +144,33 @@
 				28D52E2E283BADB300433CE6 /* GitHubApiRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		292390FC299271640024CCB0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				294063B02984409B003BE83E /* TableViewCell.xib */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		292390FD299271BF0024CCB0 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				BFD945E4244DC5E80012785A /* SearchPage.storyboard */,
+				289B9E68297B06570092E955 /* DetailPage.storyboard */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		292390FE2992748E0024CCB0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				293EB45E298ED8B5007D6771 /* TableViewController.swift */,
+				294063AF2984409B003BE83E /* TableViewCellController.swift */,
+				290F6BA0298F5BA200B12C75 /* UISearchBarController.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		2D130825231465924A9A7D72 /* Pods */ = {
@@ -478,11 +508,13 @@
 			files = (
 				BFD945E3244DC5E80012785A /* SearchViewController.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */,
-				294063B12984409B003BE83E /* TableViewCell.swift in Sources */,
+				294063B12984409B003BE83E /* TableViewCellController.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				28D52E2F283BADB300433CE6 /* GitHubApiRepository.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
-				293EB45F298ED8B5007D6771 /* TableViewClass.swift in Sources */,
+				290F6BA1298F5BA200B12C75 /* UISearchBarController.swift in Sources */,
+				29239100299275490024CCB0 /* UISearchBarModel.swift in Sources */,
+				293EB45F298ED8B5007D6771 /* TableViewController.swift in Sources */,
 				28D52E2C283B933E00433CE6 /* GitHubApiResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
