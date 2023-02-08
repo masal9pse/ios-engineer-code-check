@@ -15,18 +15,17 @@ final class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateRepositoryInfo()
+    }
+    
+    private func updateRepositoryInfo() {
         languageLabel.text = "Written in \(searchedItem.language ?? "")"
         stargazersCountLable.text = "\(searchedItem.stargazersCount) stars"
         watchersCountLabel.text = "\(searchedItem.watchersCount) watchers"
         forksCountLable.text = "\(searchedItem.forksCount) forks"
         issuesCountLabel.text = "\(searchedItem.openIssuesCount) open issues"
-        getImage()
-    }
-    
-    private func getImage() -> () {
-        titleLabel.text = searchedItem.fullName
         
+        titleLabel.text = searchedItem.fullName
         if let owner = searchedItem.owner {
             if let imageUrl = owner.avatarUrl {
                 Nuke.loadImage(with: URL(string: imageUrl), into: self.imageView)

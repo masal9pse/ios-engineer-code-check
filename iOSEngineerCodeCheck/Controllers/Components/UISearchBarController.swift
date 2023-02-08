@@ -21,7 +21,12 @@ final class UISearchBarController: UISearchBar, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let searchedWord = searchBar.text ?? ""
+        viewIndicator()
+        hitApiResponseView(searchedWord: searchBar.text ?? "")
+        presentController.view.endEditing(true)
+    }
+    
+    private func viewIndicator () {
         indicator.center = presentController.view.center
         // インジケーターのスタイルを指定（白色＆大きいサイズ）
         indicator.style = .whiteLarge
@@ -30,7 +35,9 @@ final class UISearchBarController: UISearchBar, UISearchBarDelegate {
         // インジケーターを View に追加
         presentController.view.addSubview(indicator)
         indicator.startAnimating()
-        // ビジネスロジックなのでModelに記載する。
+    }
+    
+    private func hitApiResponseView(searchedWord: String) {
         if !searchedWord.isEmpty {
             let gitHubApiResponse = GitHubApiRepository()
             Task {
@@ -45,7 +52,5 @@ final class UISearchBarController: UISearchBar, UISearchBarDelegate {
                 }
             }
         }
-        // キーボードを下ろす。
-        presentController.view.endEditing(true)
     }
 }

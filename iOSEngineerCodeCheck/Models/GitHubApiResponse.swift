@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GitHubApiResponse: Codable {
+struct GitHubApiResponse: Codable {
     let totalCount: Int
     let items: [Item]
     
@@ -18,7 +18,7 @@ class GitHubApiResponse: Codable {
     }
 }
 
-class Item: Codable {
+struct Item: Codable {
     let name: String
     let fullName: String
     let stargazersCount: Int
@@ -40,7 +40,7 @@ class Item: Codable {
     }
 }
 
-class Owner: Codable {
+struct Owner: Codable {
     let avatarUrl: String?
     enum CodingKeys: String, CodingKey {
         case avatarUrl = "avatar_url"
