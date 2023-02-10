@@ -22,14 +22,16 @@ final class UISearchBarController: UISearchBar, UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewIndicator()
-        hitApiResponseView(searchedWord: searchBar.text ?? "")
+        Task {
+            await hitApiResponseView(searchedWord: searchBar.text ?? "")
+        }
         presentController.view.endEditing(true)
     }
     
-    private func viewIndicator () {
+    private func viewIndicator() {
         indicator.center = presentController.view.center
         // インジケーターのスタイルを指定（白色＆大きいサイズ）
-        indicator.style = .whiteLarge
+        indicator.style = .large
         // インジケーターの色を設定（青色）
         indicator.color = UIColor(red: 44 / 255, green: 169 / 255, blue: 225 / 255, alpha: 1)
         // インジケーターを View に追加
@@ -37,20 +39,17 @@ final class UISearchBarController: UISearchBar, UISearchBarDelegate {
         indicator.startAnimating()
     }
     
-    private func hitApiResponseView(searchedWord: String) {
-        if !searchedWord.isEmpty {
-            let gitHubApiResponse = GitHubApiRepository()
-            Task {
-                do {
-                    let response = try await gitHubApiResponse.getGitHubApiResponse(searchedWord: searchedWord)
-                    presentTableView.reloadTableViewWith(withData: response, withContentController: presentController)
-                    DispatchQueue.main.async {
-                        self.indicator.stopAnimating()
-                    }
-                } catch {
-                    print(error)
-                }
-            }
+    private func hitApiResponseView(searchedWord: String) async {
+        defer {
+            self.indicator.stopAnimating()
+        }
+        
+        do {
+            let uiSearchBarModel = UISearchBarModel()
+            let response = try await uiSearchBarModel.getGitHubApi(searchedWord: searchedWord)
+            presentTableView.reloadTableViewWith(withData: response, withContentController: presentController)
+        } catch {
+            print(error)
         }
     }
 }
