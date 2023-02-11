@@ -49,6 +49,7 @@ final class UISearchBarController: UISearchBar, UISearchBarDelegate {
             let response = try await uiSearchBarModel.getGitHubApi(searchedWord: searchedWord)
             presentTableView.reloadTableViewWith(withData: response, withContentController: presentController)
         } catch {
+            presentTableView.reloadTableViewWith(withData: [], withContentController: presentController)
             print(error)
         }
     }
