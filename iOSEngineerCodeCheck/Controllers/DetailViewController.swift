@@ -10,9 +10,15 @@ final class DetailViewController: UIViewController {
     @IBOutlet private weak var forksCountLable: UILabel!
     @IBOutlet private weak var issuesCountLabel: UILabel!
 
-    // すでに値が入っていることが確定しているので暗黙的アンラップ型を使用
-    var searchedItem: Item!
-    
+    // すでに値が入っていることが確定しているので暗黙的強制アンラップ型を使用
+    var searchedItem: Item! {
+        didSet(oldItem) {
+            if oldItem != nil {
+                searchedItem = oldItem
+            }
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         updateRepositoryInfo()
