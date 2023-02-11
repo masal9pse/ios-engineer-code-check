@@ -10,7 +10,7 @@ final class DetailViewController: UIViewController {
     @IBOutlet private weak var forksCountLable: UILabel!
     @IBOutlet private weak var issuesCountLabel: UILabel!
 
-    // すでに値が入っていることが確定しているので暗黙的強制アンラップ型を使用
+    // すでに値が入っていることが確定しているので暗黙的アンラップ型を使用
     var searchedItem: Item! {
         didSet(oldItem) {
             if oldItem != nil {
@@ -21,11 +21,13 @@ final class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         updateRepositoryInfo()
     }
     
     private func updateRepositoryInfo() {
-        languageLabel.text = "Written in \(searchedItem.language ?? "")"
+        let model = DetailViewModel()
+        languageLabel.text = model.getLanguage(language: searchedItem.language)
         stargazersCountLable.text = "\(searchedItem.stargazersCount) stars"
         watchersCountLabel.text = "\(searchedItem.watchersCount) watchers"
         forksCountLable.text = "\(searchedItem.forksCount) forks"

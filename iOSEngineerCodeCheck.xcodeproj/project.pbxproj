@@ -13,6 +13,8 @@
 		28D52E2F283BADB300433CE6 /* GitHubApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D52E2E283BADB300433CE6 /* GitHubApiRepository.swift */; };
 		290F6BA1298F5BA200B12C75 /* UISearchBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290F6BA0298F5BA200B12C75 /* UISearchBarController.swift */; };
 		29239100299275490024CCB0 /* UISearchBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292390FF299275490024CCB0 /* UISearchBarModel.swift */; };
+		292B94222997D1D10003CE9E /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292B94212997D1D10003CE9E /* DetailViewModel.swift */; };
+		292B94242997D2CA0003CE9E /* DetailViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292B94232997D2CA0003CE9E /* DetailViewModelTest.swift */; };
 		293EB45F298ED8B5007D6771 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293EB45E298ED8B5007D6771 /* TableViewController.swift */; };
 		294063B12984409B003BE83E /* TableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294063AF2984409B003BE83E /* TableViewCellController.swift */; };
 		294063B22984409B003BE83E /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 294063B02984409B003BE83E /* TableViewCell.xib */; };
@@ -54,6 +56,8 @@
 		28D52E2E283BADB300433CE6 /* GitHubApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApiRepository.swift; sourceTree = "<group>"; };
 		290F6BA0298F5BA200B12C75 /* UISearchBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarController.swift; sourceTree = "<group>"; };
 		292390FF299275490024CCB0 /* UISearchBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarModel.swift; sourceTree = "<group>"; };
+		292B94212997D1D10003CE9E /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		292B94232997D2CA0003CE9E /* DetailViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTest.swift; sourceTree = "<group>"; };
 		293EB45E298ED8B5007D6771 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		294063AF2984409B003BE83E /* TableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellController.swift; sourceTree = "<group>"; };
 		294063B02984409B003BE83E /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
@@ -132,8 +136,9 @@
 		28D52E2A283B919C00433CE6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				28D52E2B283B933E00433CE6 /* GitHubApiResponse.swift */,
+				292B941F2997D1700003CE9E /* Entities */,
 				292390FF299275490024CCB0 /* UISearchBarModel.swift */,
+				292B94212997D1D10003CE9E /* DetailViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,6 +176,14 @@
 				290F6BA0298F5BA200B12C75 /* UISearchBarController.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		292B941F2997D1700003CE9E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				28D52E2B283B933E00433CE6 /* GitHubApiResponse.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		2D130825231465924A9A7D72 /* Pods */ = {
@@ -224,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				BFD945F5244DC5EB0012785A /* GitHubApiResponseTest.swift */,
+				292B94232997D2CA0003CE9E /* DetailViewModelTest.swift */,
 				BFD945F7244DC5EB0012785A /* Info.plist */,
 			);
 			path = iOSEngineerCodeCheckTests;
@@ -515,6 +529,7 @@
 				290F6BA1298F5BA200B12C75 /* UISearchBarController.swift in Sources */,
 				29239100299275490024CCB0 /* UISearchBarModel.swift in Sources */,
 				293EB45F298ED8B5007D6771 /* TableViewController.swift in Sources */,
+				292B94222997D1D10003CE9E /* DetailViewModel.swift in Sources */,
 				28D52E2C283B933E00433CE6 /* GitHubApiResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFD945F6244DC5EB0012785A /* GitHubApiResponseTest.swift in Sources */,
+				292B94242997D2CA0003CE9E /* DetailViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
