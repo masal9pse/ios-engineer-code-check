@@ -47,10 +47,12 @@ Issues を確認した上、本プロジェクトを [**Duplicate** してくだ
 ## 環境構築
 私の環境では、M1チップを使用したMapBookを使っています。
 
-```bash
-$ pod --version
-1.11.3
+- Swift5.7
+- Version 14.2 
+- cocoapod 1.11.3
 
+
+```bash
 $ arch -x86_64 pod install
 ```
 

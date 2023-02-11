@@ -24,7 +24,7 @@ final class DetailViewController: UIViewController {
     }
     
     private func updateRepositoryInfo() {
-        guard let searchedItem = searchedItem else {
+        guard let searchedItem else {
             return
         }
         

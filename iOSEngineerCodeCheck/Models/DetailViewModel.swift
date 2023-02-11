@@ -6,11 +6,9 @@
 //  Copyright © 2023 YUMEMI Inc. All rights reserved.
 //
 
-import Foundation
-
 class DetailViewModel {
     func getLanguage(language: String?) -> String {
-        guard let language = language else {
+        guard let language else {
             return ""
         }
         

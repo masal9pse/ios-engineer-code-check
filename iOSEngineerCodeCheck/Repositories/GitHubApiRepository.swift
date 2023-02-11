@@ -16,7 +16,7 @@ enum WebApiError: Error {
 class GitHubApiRepository {
     func getGitHubApiResponse(searchedWord: String) async throws -> [Item] {
         let api = URL(string: "https://api.github.com/search/repositories?q=\(searchedWord)")
-        guard let api = api else {
+        guard let api else {
             throw WebApiError.dataNotFound
         }
         let (data, _) = try await URLSession.shared.data(from: api, delegate: nil)
