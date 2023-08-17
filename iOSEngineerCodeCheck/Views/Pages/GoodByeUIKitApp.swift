@@ -9,25 +9,27 @@
 import SwiftUI
 
 struct GoodByeUIKitApp2: View {
-    let fruits = ["りんご", "オレンジ", "バナナ"]
+    @State private var fruits = ["りんご", "オレンジ", "バナナ"]
     var body: some View {
 //        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         Button("hit gitHubAPI", action: {
-            Task {
-                let api = URL(string: "https://api.github.com/search/repositories?q=php")
-                guard let api = api else {
-                    throw WebApiError.dataNotFound
-                }
-                let (data, _) = try await URLSession.shared.data(from: api, delegate: nil)
-                let response = try? JSONDecoder().decode(GitHubApiResponse.self, from: data)
-                print(response?.items.first?.name)
-                let o = 4
-            }
+            fruits.append("ナシ")
+            let k = 3
+//            Task {
+//                let api = URL(string: "https://api.github.com/search/repositories?q=php")
+//                guard let api = api else {
+//                    throw WebApiError.dataNotFound
+//                }
+//                let (data, _) = try await URLSession.shared.data(from: api, delegate: nil)
+//                let response = try? JSONDecoder().decode(GitHubApiResponse.self, from: data)
+//                print(response?.items.first?.name)
+//                let o = 4
+//            }
         })
         List {
-            Text("大根")
-            Text("キャベツ")
-            Text("じゃがいも")
+//            Text("大根")
+//            Text("キャベツ")
+//            Text("じゃがいも")
             ForEach(0 ..< fruits.count) { index in
                 Text(fruits[index])
             }
