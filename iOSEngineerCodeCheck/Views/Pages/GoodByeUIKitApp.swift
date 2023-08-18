@@ -9,18 +9,15 @@
 import SwiftUI
 
 struct GoodByeUIKitApp2: View {
-    @State private var fruits = ["りんご", "オレンジ", "バナナ"]
+    @ObservedObject var stateClass: StateClass
     var body: some View {
         Button("hit gitHubAPI", action: {
-            fruits.append("ナシ")
+            stateClass.fruits.append("ナシ")
         })
         List {
-            ForEach(fruits.indices, id: \.self) { index in
-                Text(fruits[index])
+            ForEach(stateClass.fruits.indices, id: \.self) { index in
+                Text(stateClass.fruits[index])
             }
-//            ForEach(0 ..< fruits.count) { index in
-//                Text(fruits[index])
-//            }
         }
     }
 }
@@ -30,7 +27,12 @@ struct GoodByeUIKitApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
-            GoodByeUIKitApp2() // 一番最初に表示されるView: これから作成します
+            GoodByeUIKitApp2(stateClass: StateClass())
         }
     }
+}
+
+@MainActor
+final class StateClass: ObservableObject {
+    @Published var fruits = ["りんご", "オレンジ", "バナナ"]
 }
