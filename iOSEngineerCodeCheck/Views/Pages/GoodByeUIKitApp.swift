@@ -11,7 +11,7 @@ struct GoodByeUIKitApp2: View {
     @ObservedObject var stateClass: StateClass
     var body: some View {
         Button("ナシ追加", action: {
-            stateClass.fruits.append("ナシ")
+            stateClass.addList()
         })
         NavigationView {
             List {
@@ -45,4 +45,8 @@ struct GoodByeUIKitApp: App {
 @MainActor
 final class StateClass: ObservableObject {
     @Published var fruits = ["りんご", "オレンジ", "バナナ"]
+    
+    func addList() {
+        fruits.append("ナシ")
+    }
 }
