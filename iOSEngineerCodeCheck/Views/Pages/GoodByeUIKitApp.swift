@@ -5,9 +5,6 @@
 //  Created by 山本大翔 on 2023/07/31.
 //  Copyright © 2023 YUMEMI Inc. All rights reserved.
 //
-// リンクを表示
-// 画面遷移のやり方
-// 詳細ページを表示
 import SwiftUI
 
 struct GoodByeUIKitApp2: View {
@@ -19,16 +16,9 @@ struct GoodByeUIKitApp2: View {
         NavigationView {
             List {
                 ForEach(stateClass.fruits.indices, id: \.self) { index in
-                    // 遷移しない
-                    //                NavigationView {
-                    //                    NavigationLink(destination: SecondView()) {
-                    //                        Text("画面遷移")
-                    //                    }
-                    //                }
-                    NavigationLink(destination: SecondView()) {
-                        Text("画面遷移")
+                    NavigationLink(destination: SecondView(info: stateClass.fruits[index])) {
+                        Text(stateClass.fruits[index])
                     }
-                    Text(stateClass.fruits[index])
                 }
             }
         }
@@ -36,8 +26,9 @@ struct GoodByeUIKitApp2: View {
 }
 
 struct SecondView: View {
+    let info: String
     var body: some View {
-        Text("画面遷移")
+        Text(info)
     }
 }
 
