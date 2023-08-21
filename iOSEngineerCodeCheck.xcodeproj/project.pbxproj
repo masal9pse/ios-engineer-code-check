@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2612B64D3A1B962D34784E52 /* Pods_iOSEngineerCodeCheckTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6577B57DB327A6CF81D2F610 /* Pods_iOSEngineerCodeCheckTests.framework */; };
+		287DC1042A93A96100F12AA5 /* GitHubApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287DC1032A93A96100F12AA5 /* GitHubApiRepository.swift */; };
 		289B9E69297B06570092E955 /* DetailPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289B9E68297B06570092E955 /* DetailPage.storyboard */; };
 		28D52E2C283B933E00433CE6 /* GitHubApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D52E2B283B933E00433CE6 /* GitHubApiResponse.swift */; };
-		28D52E2F283BADB300433CE6 /* GitHubApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D52E2E283BADB300433CE6 /* GitHubApiRepository.swift */; };
+		28D52E2F283BADB300433CE6 /* ApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D52E2E283BADB300433CE6 /* ApiRepository.swift */; };
 		290F6BA1298F5BA200B12C75 /* UISearchBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290F6BA0298F5BA200B12C75 /* UISearchBarController.swift */; };
 		29239100299275490024CCB0 /* UISearchBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292390FF299275490024CCB0 /* UISearchBarModel.swift */; };
 		293EB45F298ED8B5007D6771 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293EB45E298ED8B5007D6771 /* TableViewController.swift */; };
@@ -49,9 +50,10 @@
 		01CD4C47AE107D059C87FFCC /* Pods_iOSEngineerCodeCheck_iOSEngineerCodeCheckUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSEngineerCodeCheck_iOSEngineerCodeCheckUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BBF8DEF903810FCFF88E0DF /* Pods_iOSEngineerCodeCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSEngineerCodeCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F38BC9B83333E001A1CEF1E /* Pods-iOSEngineerCodeCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheck.debug.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheck/Pods-iOSEngineerCodeCheck.debug.xcconfig"; sourceTree = "<group>"; };
+		287DC1032A93A96100F12AA5 /* GitHubApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApiRepository.swift; sourceTree = "<group>"; };
 		289B9E68297B06570092E955 /* DetailPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailPage.storyboard; sourceTree = "<group>"; };
 		28D52E2B283B933E00433CE6 /* GitHubApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApiResponse.swift; sourceTree = "<group>"; };
-		28D52E2E283BADB300433CE6 /* GitHubApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApiRepository.swift; sourceTree = "<group>"; };
+		28D52E2E283BADB300433CE6 /* ApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepository.swift; sourceTree = "<group>"; };
 		290F6BA0298F5BA200B12C75 /* UISearchBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarController.swift; sourceTree = "<group>"; };
 		292390FF299275490024CCB0 /* UISearchBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarModel.swift; sourceTree = "<group>"; };
 		293EB45E298ED8B5007D6771 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		287DC1022A93A8D600F12AA5 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				287DC1032A93A96100F12AA5 /* GitHubApiRepository.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
 		289B9E66297AFAE60092E955 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,7 +151,7 @@
 		28D52E2D283BAD5900433CE6 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				28D52E2E283BADB300433CE6 /* GitHubApiRepository.swift */,
+				28D52E2E283BADB300433CE6 /* ApiRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -216,6 +226,7 @@
 				289B9E66297AFAE60092E955 /* Controllers */,
 				289B9E67297AFB180092E955 /* Views */,
 				BFD945EC244DC5EB0012785A /* Info.plist */,
+				287DC1022A93A8D600F12AA5 /* Infrastructure */,
 			);
 			path = iOSEngineerCodeCheck;
 			sourceTree = "<group>";
@@ -510,12 +521,13 @@
 				BF0A658D244F2A3B00280FA6 /* DetailViewController.swift in Sources */,
 				294063B12984409B003BE83E /* TableViewCellController.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
-				28D52E2F283BADB300433CE6 /* GitHubApiRepository.swift in Sources */,
+				28D52E2F283BADB300433CE6 /* ApiRepository.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 				290F6BA1298F5BA200B12C75 /* UISearchBarController.swift in Sources */,
 				29239100299275490024CCB0 /* UISearchBarModel.swift in Sources */,
 				293EB45F298ED8B5007D6771 /* TableViewController.swift in Sources */,
 				28D52E2C283B933E00433CE6 /* GitHubApiResponse.swift in Sources */,
+				287DC1042A93A96100F12AA5 /* GitHubApiRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

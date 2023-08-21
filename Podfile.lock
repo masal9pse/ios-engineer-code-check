@@ -1,6 +1,6 @@
 PODS:
   - Nuke (10.7.1)
-  - SwiftFormat/CLI (0.50.7)
+  - SwiftFormat/CLI (0.51.13)
 
 DEPENDENCIES:
   - Nuke
@@ -13,7 +13,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Nuke: 279f17a599fd1c83cf51de5e0e1f2db143a287b0
-  SwiftFormat: 4fcf72ee44c7198255108c22ed7135c38a36ba6b
+  SwiftFormat: f4c21fdf8aacdd2db6ffe110f939e0548c9a7de3
 
 PODFILE CHECKSUM: 304bf5d4c7e49ff2de4fdffeaea4928e39898218
 

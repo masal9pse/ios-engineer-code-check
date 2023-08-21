@@ -2,18 +2,13 @@
 //  GitHubApiRepository.swift
 //  iOSEngineerCodeCheck
 //
-//  Created by 山本大翔 on 2022/05/23.
-//  Copyright © 2022 YUMEMI Inc. All rights reserved.
+//  Created by 山本大翔 on 2023/08/21.
+//  Copyright © 2023 YUMEMI Inc. All rights reserved.
 //
 
 import Foundation
 
-/// WebAPIのエラー
-enum WebApiError: Error {
-    case dataNotFound
-}
-
-class GitHubApiRepository {
+class GitHubApiRepository: SearchApiRepository {
     func getGitHubApiResponse(searchedWord: String) async throws -> [Item] {
         let api = URL(string: "https://api.github.com/search/repositories?q=\(searchedWord)")
         guard let api = api else {

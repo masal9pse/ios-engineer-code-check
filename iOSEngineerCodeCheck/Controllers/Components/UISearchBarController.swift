@@ -12,7 +12,7 @@ final class UISearchBarController: UISearchBar, UISearchBarDelegate {
     var presentController = UIViewController()
     var presentTableView = TableViewController()
     let indicator = UIActivityIndicatorView()
-    
+
     func initSearchBar(withContentController: UIViewController, withContentTableView: TableViewController) {
         presentController = withContentController
         presentTableView = withContentTableView
@@ -43,9 +43,8 @@ final class UISearchBarController: UISearchBar, UISearchBarDelegate {
         defer {
             self.indicator.stopAnimating()
         }
-        
         do {
-            let uiSearchBarModel = UISearchBarModel()
+            let uiSearchBarModel = UISearchBarModel(repository: GitHubApiRepository())
             let response = try await uiSearchBarModel.getGitHubApi(searchedWord: searchedWord)
             presentTableView.reloadTableViewWith(withData: response, withContentController: presentController)
         } catch {

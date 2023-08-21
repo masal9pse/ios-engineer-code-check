@@ -8,7 +8,12 @@
 
 import Foundation
 
-final class UISearchBarModel {
+class UISearchBarModel {
+    init(repository: SearchApiRepository) {
+        self.repository = repository
+    }
+
+    let repository: SearchApiRepository
     func getGitHubApi(searchedWord: String) async throws -> [Item] {
         if !searchedWord.isEmpty {
             let gitHubApiResponse = GitHubApiRepository()
