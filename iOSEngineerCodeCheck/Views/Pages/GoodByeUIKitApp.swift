@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct GoodByeUIKitApp2: View {
-    @ObservedObject var stateClass: StateClass
+    // @ObservedObjectはflutterでいうcontext?
+//    @ObservedObject var stateClass: StateClass
+    @ObservedObject var stateClass = StateClass()
+//    var clickUseCase = ClickUseCase(stateClass: self.stateClass)
     var body: some View {
         Button("ナシ追加", action: {
-            stateClass.addList()
+            let clickUseCase = ClickUseCase(stateClass: self.stateClass)
+            clickUseCase.click()
         })
         NavigationView {
             List {
@@ -37,8 +41,16 @@ struct GoodByeUIKitApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
-            GoodByeUIKitApp2(stateClass: StateClass())
+//            GoodByeUIKitApp2(stateClass: StateClass())
+            GoodByeUIKitApp2()
         }
+    }
+}
+
+struct ClickUseCase {
+    @ObservedObject var stateClass: StateClass
+    func click() {
+        stateClass.addList()
     }
 }
 
