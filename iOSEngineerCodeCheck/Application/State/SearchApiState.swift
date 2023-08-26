@@ -9,6 +9,12 @@
 import Foundation
 
 final class SearchApiState: ObservableObject {
+    let searchApiRepository: SearchApiRepositoryProtocol
+    
+    init(searchApiRepository: SearchApiRepositoryProtocol) {
+        self.searchApiRepository = searchApiRepository
+    }
+    
     @Published var apiResponseList: [GitHubApiResponse] = []
 }
 

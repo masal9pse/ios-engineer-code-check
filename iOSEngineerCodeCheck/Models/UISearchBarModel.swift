@@ -9,12 +9,12 @@
 import Foundation
 
 final class UISearchBarModel {
-    func getGitHubApi(searchedWord: String) async throws -> [Item] {
+    func getGitHubApi(searchedWord: String) async throws -> GitHubApiResponse? {
         if !searchedWord.isEmpty {
             let gitHubApiResponse = GitHubApiRepository()
             let response = try await gitHubApiResponse.getGitHubApiResponse(searchedWord: searchedWord)
             return response
         }
-        return []
+        return nil
     }
 }

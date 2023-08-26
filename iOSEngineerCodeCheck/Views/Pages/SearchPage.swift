@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct SearchPage: View {
+    @ObservedObject var searchApiState: SearchApiState
     @ObservedObject var stateClass = StateClass()
+    
+    init(searchApiRepository: SearchApiRepositoryProtocol) {
+        self.searchApiState = SearchApiState(searchApiRepository: searchApiRepository)
+    }
+    
     var body: some View {
         Button("ナシ追加", action: {
             let clickUseCase = ClickUseCase(stateClass: self.stateClass)
