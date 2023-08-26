@@ -7,16 +7,14 @@
 //
 import SwiftUI
 
-struct GoodByeUIKitApp2: View {
-    // @ObservedObjectはflutterでいうcontext?
-//    @ObservedObject var stateClass: StateClass
+struct SearchPage: View {
     @ObservedObject var stateClass = StateClass()
-//    var clickUseCase = ClickUseCase(stateClass: self.stateClass)
     var body: some View {
         Button("ナシ追加", action: {
             let clickUseCase = ClickUseCase(stateClass: self.stateClass)
             clickUseCase.click()
         })
+        CircleCheck_Previews.previews
         NavigationView {
             List {
                 ForEach(stateClass.fruits.indices, id: \.self) { index in
@@ -29,6 +27,14 @@ struct GoodByeUIKitApp2: View {
     }
 }
 
+struct CircleCheck_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack {
+            Text("テスト")
+        }
+    }
+}
+
 struct SecondView: View {
     let info: String
     var body: some View {
@@ -36,29 +42,9 @@ struct SecondView: View {
     }
 }
 
-@main
-struct GoodByeUIKitApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    var body: some Scene {
-        WindowGroup {
-//            GoodByeUIKitApp2(stateClass: StateClass())
-            GoodByeUIKitApp2()
-        }
-    }
-}
-
 struct ClickUseCase {
     @ObservedObject var stateClass: StateClass
     func click() {
         stateClass.addList()
-    }
-}
-
-@MainActor
-final class StateClass: ObservableObject {
-    @Published var fruits = ["りんご", "オレンジ", "バナナ"]
-    
-    func addList() {
-        fruits.append("ナシ")
     }
 }
