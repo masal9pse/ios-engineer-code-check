@@ -23,7 +23,7 @@ struct SearchPage: View {
                     Task {
                         try await searchApiState.getGitHubApiResponse(searchedWord: self.name)
                     }
-                }, name: $name)
+                }, name: $name, editting: $editting)
                 if searchApiState.apiResponseList != nil {
                     List {
                         ForEach(searchApiState.apiResponseList!.items.indices, id: \.self) { index in
