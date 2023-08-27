@@ -19,17 +19,11 @@ struct SearchPage: View {
     var body: some View {
         NavigationView {
             VStack {
-                TextField("キーワードを入力して下さい", text: $name,
-                          /// リターンキーが押された時の処理
-                          onCommit: {
-                              Task {
-                                  try await searchApiState.getGitHubApiResponse(searchedWord: self.name)
-                              }
-                          })
-                          .textFieldStyle(RoundedBorderTextFieldStyle()) // 入力域を枠で囲む
-                          .padding() // 余白を追加
-                          // 編集フラグがONの時に枠に影を付ける
-                          .shadow(color: editting ? .blue : .clear, radius: 3)
+                SearchFormField(action: {
+                    Task {
+                        try await searchApiState.getGitHubApiResponse(searchedWord: self.name)
+                    }
+                }, name: $name)
                 if searchApiState.apiResponseList != nil {
                     List {
                         ForEach(searchApiState.apiResponseList!.items.indices, id: \.self) { index in

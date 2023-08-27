@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2612B64D3A1B962D34784E52 /* Pods_iOSEngineerCodeCheckTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6577B57DB327A6CF81D2F610 /* Pods_iOSEngineerCodeCheckTests.framework */; };
+		281073722A9AD4D7003B7F41 /* SearchFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281073712A9AD4D7003B7F41 /* SearchFormField.swift */; };
 		28519E4B2A9A6938003488AF /* SearchApiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28519E4A2A9A6938003488AF /* SearchApiState.swift */; };
 		28519E4E2A9A73DA003488AF /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28519E4D2A9A73DA003488AF /* SearchPage.swift */; };
 		28519E6C2A9A7D83003488AF /* LaunchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28519E6B2A9A7D83003488AF /* LaunchApp.swift */; };
@@ -44,6 +45,7 @@
 		01CD4C47AE107D059C87FFCC /* Pods_iOSEngineerCodeCheck_iOSEngineerCodeCheckUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSEngineerCodeCheck_iOSEngineerCodeCheckUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BBF8DEF903810FCFF88E0DF /* Pods_iOSEngineerCodeCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSEngineerCodeCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F38BC9B83333E001A1CEF1E /* Pods-iOSEngineerCodeCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheck.debug.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheck/Pods-iOSEngineerCodeCheck.debug.xcconfig"; sourceTree = "<group>"; };
+		281073712A9AD4D7003B7F41 /* SearchFormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFormField.swift; sourceTree = "<group>"; };
 		28519E4A2A9A6938003488AF /* SearchApiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchApiState.swift; sourceTree = "<group>"; };
 		28519E4D2A9A73DA003488AF /* SearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage.swift; sourceTree = "<group>"; };
 		28519E6B2A9A7D83003488AF /* LaunchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchApp.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		2810736D2A9AD13D003B7F41 /* Atoms */ = {
 			isa = PBXGroup;
 			children = (
+				281073712A9AD4D7003B7F41 /* SearchFormField.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 				28519E6C2A9A7D83003488AF /* LaunchApp.swift in Sources */,
 				28519E702A9A8A1A003488AF /* SearchApiRepository.swift in Sources */,
+				281073722A9AD4D7003B7F41 /* SearchFormField.swift in Sources */,
 				28519E722A9AA11E003488AF /* DetailPage.swift in Sources */,
 				28519E4E2A9A73DA003488AF /* SearchPage.swift in Sources */,
 				28D52E2C283B933E00433CE6 /* GitHubApiResponse.swift in Sources */,
