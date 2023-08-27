@@ -15,14 +15,10 @@ final class SearchApiState: ObservableObject {
         self.searchApiRepository = searchApiRepository
     }
     
-    @Published var apiResponseList: [GitHubApiResponse] = []
-}
-
-@MainActor
-final class StateClass: ObservableObject {
-    @Published var fruits = ["りんご", "オレンジ", "バナナ"]
+    @Published var apiResponseList: GitHubApiResponse?
     
-    func addList() {
-        fruits.append("ナシ")
+    func getGitHubApiResponse(searchedWord: String) async throws {
+        let response = try await searchApiRepository.getGitHubApiResponse(searchedWord: searchedWord)
+        apiResponseList = response
     }
 }

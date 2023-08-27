@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SearchPage: View {
     @ObservedObject var searchApiState: SearchApiState
-    @ObservedObject var stateClass = StateClass()
     
     init(searchApiRepository: SearchApiRepositoryProtocol) {
         self.searchApiState = SearchApiState(searchApiRepository: searchApiRepository)
@@ -17,40 +16,20 @@ struct SearchPage: View {
     
     var body: some View {
         Button("ナシ追加", action: {
-            let clickUseCase = ClickUseCase(stateClass: self.stateClass)
-            clickUseCase.click()
+            Task {
+                try await searchApiState.getGitHubApiResponse(searchedWord: "php")
+            }
         })
-        CircleCheck_Previews.previews
-        NavigationView {
-            List {
-                ForEach(stateClass.fruits.indices, id: \.self) { index in
-                    NavigationLink(destination: SecondView(info: stateClass.fruits[index])) {
-                        Text(stateClass.fruits[index])
+        if searchApiState.apiResponseList != nil {
+            NavigationView {
+                List {
+                    ForEach(searchApiState.apiResponseList!.items.indices, id: \.self) { index in
+                        NavigationLink(destination: DetailPage(info: searchApiState.apiResponseList!.items[index].fullName)) {
+                            Text(searchApiState.apiResponseList!.items[index].fullName)
+                        }
                     }
                 }
             }
         }
-    }
-}
-
-struct CircleCheck_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            Text("テスト")
-        }
-    }
-}
-
-struct SecondView: View {
-    let info: String
-    var body: some View {
-        Text(info)
-    }
-}
-
-struct ClickUseCase {
-    @ObservedObject var stateClass: StateClass
-    func click() {
-        stateClass.addList()
     }
 }
