@@ -19,7 +19,6 @@
 		BF8D988742288F28DA5D38F5 /* Pods_iOSEngineerCodeCheck_iOSEngineerCodeCheckUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CD4C47AE107D059C87FFCC /* Pods_iOSEngineerCodeCheck_iOSEngineerCodeCheckUITests.framework */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
-		BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFD945E7244DC5EB0012785A /* Assets.xcassets */; };
 		BFD945F6244DC5EB0012785A /* GitHubApiResponseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945F5244DC5EB0012785A /* GitHubApiResponseTest.swift */; };
 		BFD94601244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */; };
 /* End PBXBuildFile section */
@@ -61,7 +60,6 @@
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFD945E0244DC5E80012785A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BFD945E7244DC5EB0012785A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFD945EC244DC5EB0012785A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFD945F1244DC5EB0012785A /* iOSEngineerCodeCheckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSEngineerCodeCheckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945F5244DC5EB0012785A /* GitHubApiResponseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApiResponseTest.swift; sourceTree = "<group>"; };
@@ -99,10 +97,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		28519E472A9A67C3003488AF /* Application */ = {
+		2810736D2A9AD13D003B7F41 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		2810736E2A9AD144003B7F41 /* Organisms */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Organisms;
+			sourceTree = "<group>";
+		};
+		2810736F2A9AD16F003B7F41 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				28519E482A9A67D0003488AF /* State */,
+				289B9E67297AFB180092E955 /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		28519E472A9A67C3003488AF /* Application */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -144,8 +164,9 @@
 			isa = PBXGroup;
 			children = (
 				28519E6B2A9A7D83003488AF /* LaunchApp.swift */,
+				2810736D2A9AD13D003B7F41 /* Atoms */,
+				2810736E2A9AD144003B7F41 /* Organisms */,
 				292390FD299271BF0024CCB0 /* Pages */,
-				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,12 +226,12 @@
 		BFD945DD244DC5E80012785A /* iOSEngineerCodeCheck */ = {
 			isa = PBXGroup;
 			children = (
+				2810736F2A9AD16F003B7F41 /* Presentation */,
 				28519E6A2A9A7805003488AF /* Domain */,
 				28519E692A9A77EE003488AF /* Infrastructure */,
 				28519E472A9A67C3003488AF /* Application */,
 				28D52E2A283B919C00433CE6 /* Models */,
 				289B9E66297AFAE60092E955 /* Controllers */,
-				289B9E67297AFB180092E955 /* Views */,
 				BFD945EC244DC5EB0012785A /* Info.plist */,
 			);
 			path = iOSEngineerCodeCheck;
@@ -354,7 +375,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
