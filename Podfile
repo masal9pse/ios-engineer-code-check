@@ -6,8 +6,6 @@ target 'iOSEngineerCodeCheck' do
   use_frameworks!
 
   # Pods for iOSEngineerCodeCheck
-  pod 'SwiftFormat/CLI'
-  pod 'Nuke'
 
   target 'iOSEngineerCodeCheckTests' do
     inherit! :search_paths

@@ -1,5 +1,5 @@
 //
-//  GitHubApiRepository.swift
+//  ApiRepository.swift
 //  iOSEngineerCodeCheck
 //
 //  Created by 山本大翔 on 2022/05/23.

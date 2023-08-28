@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,20 @@
 		BFD945F6244DC5EB0012785A /* GitHubApiResponseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945F5244DC5EB0012785A /* GitHubApiResponseTest.swift */; };
 		BFD94601244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		281073762A9D2584003B7F41 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		BFD945F2244DC5EB0012785A /* PBXContainerItemProxy */ = {
@@ -140,7 +154,7 @@
 		28519E692A9A77EE003488AF /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				28D52E2E283BADB300433CE6 /* ApiRepository.swift */,
+				28D52E2E283BADB300433CE6 /* GitHubApiRepository.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -225,7 +239,6 @@
 				28519E472A9A67C3003488AF /* Application */,
 				28D52E2A283B919C00433CE6 /* Models */,
 				BFD945EC244DC5EB0012785A /* Info.plist */,
-				287DC1022A93A8D600F12AA5 /* Infrastructure */,
 			);
 			path = iOSEngineerCodeCheck;
 			sourceTree = "<group>";
@@ -270,9 +283,10 @@
 				BFD945D8244DC5E80012785A /* Frameworks */,
 				BFD945D9244DC5E80012785A /* Resources */,
 				2827226C283197010076705A /* ShellScript */,
-				120CDA8D6229865AC0411173 /* [CP] Embed Pods Frameworks */,
+				28B9E4B42A9D2A4100F34055 /* ShellScript */,
 			);
 			buildRules = (
+				281073762A9D2584003B7F41 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -308,7 +322,6 @@
 				BFD945F8244DC5EB0012785A /* Sources */,
 				BFD945F9244DC5EB0012785A /* Frameworks */,
 				BFD945FA244DC5EB0012785A /* Resources */,
-				E1B5C188C3E657206102A476 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -388,24 +401,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		120CDA8D6229865AC0411173 /* [CP] Embed Pods Frameworks */ = {
+		2827226C283197010076705A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOSEngineerCodeCheck/Pods-iOSEngineerCodeCheck-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+			);
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOSEngineerCodeCheck/Pods-iOSEngineerCodeCheck-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOSEngineerCodeCheck/Pods-iOSEngineerCodeCheck-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "cd BuildTools\n\nxcrun --sdk macosx swift build -c release\n";
 		};
-		2827226C283197010076705A /* ShellScript */ = {
+		28B9E4B42A9D2A4100F34055 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -420,7 +434,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" .  --exclude Carthage,Pods \\\n--trimwhitespace nonblank-lines \\\n--indent 4 \\\n--disable strongOutlets,trailingCommas,sortedImports,redundantSelf,unusedArguments,redundantGet\n";
+			shellScript = "cd BuildTools\n\nxcrun --sdk macosx swift build -c release \\\n--package-path .build/checkouts/SwiftFormat \\\n--product swiftformat\n\n.build/checkouts/SwiftFormat/.build/release/swiftformat $SRCROOT --config $SRCROOT/.swiftformat --swiftversion 5.7\n\n";
 		};
 		2FE4DECFE0452C22AD28C0F8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -488,23 +502,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E1B5C188C3E657206102A476 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests/Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests/Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests/Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -521,7 +518,6 @@
 				28519E722A9AA11E003488AF /* DetailPage.swift in Sources */,
 				28519E4E2A9A73DA003488AF /* SearchPage.swift in Sources */,
 				28D52E2C283B933E00433CE6 /* GitHubApiResponse.swift in Sources */,
-				287DC1042A93A96100F12AA5 /* GitHubApiRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

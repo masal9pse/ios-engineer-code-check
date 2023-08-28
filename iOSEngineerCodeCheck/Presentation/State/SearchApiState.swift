@@ -10,13 +10,13 @@ import Foundation
 
 final class SearchApiState: ObservableObject {
     let searchApiRepository: SearchApiRepositoryProtocol
-    
+
     init(searchApiRepository: SearchApiRepositoryProtocol) {
         self.searchApiRepository = searchApiRepository
     }
-    
+
     @Published var apiResponseList: GitHubApiResponse?
-    
+
     func getGitHubApiResponse(searchedWord: String) async throws {
         let response = try await searchApiRepository.getGitHubApiResponse(searchedWord: searchedWord)
         apiResponseList = response
