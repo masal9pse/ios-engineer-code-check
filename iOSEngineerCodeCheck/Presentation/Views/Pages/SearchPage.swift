@@ -11,17 +11,17 @@ struct SearchPage: View {
     @State private var name = ""
     @State private var editting = false
     @ObservedObject var searchApiState: SearchApiState
-    
+
     init(searchApiRepository: SearchApiRepositoryProtocol) {
-        self.searchApiState = SearchApiState(searchApiRepository: searchApiRepository)
+        searchApiState = SearchApiState(searchApiRepository: searchApiRepository)
     }
-    
+
     var body: some View {
         NavigationView {
             VStack {
                 SearchFormField(action: {
                     Task {
-                        try await searchApiState.getGitHubApiResponse(searchedWord: self.name)
+                        try await searchApiState.getGitHubApiResponse(searchedWord: name)
                     }
                 }, name: $name, editting: $editting)
                 if searchApiState.apiResponseList != nil {

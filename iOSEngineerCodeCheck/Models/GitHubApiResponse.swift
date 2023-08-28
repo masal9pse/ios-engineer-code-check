@@ -11,7 +11,7 @@ import Foundation
 struct GitHubApiResponse: Codable {
     let totalCount: Int
     let items: [Item]
-    
+
     enum CodingKeys: String, CodingKey {
         case totalCount = "total_count"
         case items
@@ -27,7 +27,7 @@ struct Item: Codable {
     let openIssuesCount: Int
     let language: String?
     let owner: Owner?
-    
+
     enum CodingKeys: String, CodingKey {
         case name
         case fullName = "full_name"

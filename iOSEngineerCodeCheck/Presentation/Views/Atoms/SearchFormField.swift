@@ -17,10 +17,10 @@ struct SearchFormField: View {
                   onEditingChanged: { begin in
                       /// 入力開始処理
                       if begin {
-                          self.editting = true // 編集フラグをオン
+                          editting = true // 編集フラグをオン
                           /// 入力終了処理
                       } else {
-                          self.editting = false // 編集フラグをオフ
+                          editting = false // 編集フラグをオフ
                       }
                   },
                   /// リターンキーが押された時の処理

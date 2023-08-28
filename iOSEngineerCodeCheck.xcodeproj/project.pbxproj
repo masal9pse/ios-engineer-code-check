@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -283,6 +283,7 @@
 				BFD945D8244DC5E80012785A /* Frameworks */,
 				BFD945D9244DC5E80012785A /* Resources */,
 				2827226C283197010076705A /* ShellScript */,
+				28B9E4B42A9D2A4100F34055 /* ShellScript */,
 			);
 			buildRules = (
 				281073762A9D2584003B7F41 /* PBXBuildRule */,
@@ -402,6 +403,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		2827226C283197010076705A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -415,7 +417,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" .  --exclude Carthage,Pods \\\n--trimwhitespace nonblank-lines \\\n--indent 4 \\\n--disable strongOutlets,trailingCommas,sortedImports,redundantSelf,unusedArguments,redundantGet\n";
+			shellScript = "cd BuildTools\n\nxcrun --sdk macosx swift build -c release\n";
+		};
+		28B9E4B42A9D2A4100F34055 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd BuildTools\n\nxcrun --sdk macosx swift build -c release \\\n--package-path .build/checkouts/SwiftFormat \\\n--product swiftformat\n\n.build/checkouts/SwiftFormat/.build/release/swiftformat $SRCROOT --config $SRCROOT/.swiftformat --swiftversion 5.7\n\n";
 		};
 		2FE4DECFE0452C22AD28C0F8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
