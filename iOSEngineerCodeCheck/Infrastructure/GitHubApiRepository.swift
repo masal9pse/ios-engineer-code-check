@@ -8,18 +8,13 @@
 
 import Foundation
 
-/// WebAPIのエラー
-enum WebApiError: Error {
-    case dataNotFound
-}
-
 class GitHubApiRepository: SearchApiRepositoryProtocol {
     func getGitHubApiResponse(searchedWord: String) async throws -> GitHubApiResponse? {
-        let api = URL(string: "https://api.github.com/search/repositories?q=\(searchedWord)")!
-//        guard let api else {
-//            throw WebApiError.dataNotFound
-//        }
-        let (data, _) = try await URLSession.shared.data(from: api, delegate: nil)
+        let urlString = "https://api.github.com/search/repositories?q=\(searchedWord)"
+        let encodeUrlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let encodeUrl = URL(string: encodeUrlString!)!
+        let (data, _) = try await URLSession.shared.data(from: encodeUrl, delegate:
+            nil)
         let response = try? JSONDecoder().decode(GitHubApiResponse.self, from: data)
         return response
     }
