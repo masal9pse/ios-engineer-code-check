@@ -9,8 +9,25 @@
 import SwiftUI
 
 struct DetailPage: View {
-    let info: String
+    let item: Item
     var body: some View {
-        Text(info)
+        AsyncImage(url: URL(string: item.owner?.avatarUrl ?? "")) { image in
+            image.resizable().scaledToFit()
+        } placeholder: {
+            ProgressView()
+        }
+        Text(item.fullName).padding(.top, 30).padding(.bottom, 20)
+        HStack {
+            Spacer()
+            Text("Written in \(item.language ?? "")")
+            Spacer()
+            VStack {
+                Text("\(item.stargazersCount) stars")
+                Text("\(item.watchersCount) watchers")
+                Text("\(item.forksCount) forks")
+                Text("\(item.openIssuesCount) open issues")
+            }
+            Spacer()
+        }.padding(.bottom, 30)
     }
 }
