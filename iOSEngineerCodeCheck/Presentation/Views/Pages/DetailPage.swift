@@ -18,13 +18,16 @@ struct DetailPage: View {
         }
         Text(item.fullName)
         HStack {
+            Spacer()
             Text("Written in \(item.language!)")
+            Spacer()
             VStack {
                 Text("\(item.stargazersCount) stars")
                 Text("\(item.watchersCount) watchers")
                 Text("\(item.forksCount) forks")
                 Text("\(item.openIssuesCount) open issues")
             }
+            Spacer()
         }
     }
 }
