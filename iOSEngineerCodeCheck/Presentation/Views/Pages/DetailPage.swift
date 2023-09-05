@@ -17,5 +17,14 @@ struct DetailPage: View {
             ProgressView()
         }
         Text(item.fullName)
+        HStack {
+            Text("Written in \(item.language!)")
+            VStack {
+                Text("\(item.stargazersCount) stars")
+                Text("\(item.watchersCount) watchers")
+                Text("\(item.forksCount) forks")
+                Text("\(item.openIssuesCount) open issues")
+            }
+        }
     }
 }
