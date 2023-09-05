@@ -9,8 +9,13 @@
 import SwiftUI
 
 struct DetailPage: View {
-    let info: String
+    let item: Item
     var body: some View {
-        Text(info)
+        AsyncImage(url: URL(string: item.owner?.avatarUrl ?? "")) { image in
+            image.resizable()
+        } placeholder: {
+            ProgressView()
+        }
+        Text(item.fullName)
     }
 }
