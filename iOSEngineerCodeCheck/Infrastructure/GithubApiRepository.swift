@@ -1,5 +1,5 @@
 //
-//  GithubApiRepository.swift
+//  GitHubApiRepository.swift
 //  iOSEngineerCodeCheck
 //
 //  Created by 山本大翔 on 2023/08/21.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-class GithubApiRepository: SearchApiRepositoryProtocol {
-    func getApiResponse(searchedWord: String) async throws -> ApiResponse? {
+class GitHubApiRepository: SearchApiRepositoryProtocol {
+    func getGitHubApiResponse(searchedWord: String) async throws -> GitHubApiResponse? {
         let urlString = "https://api.github.com/search/repositories?q=\(searchedWord)"
         let encodeUrlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let encodeUrl = URL(string: encodeUrlString!)!
         let (data, _) = try await URLSession.shared.data(from: encodeUrl, delegate:
             nil)
-        let response = try? JSONDecoder().decode(ApiResponse.self, from: data)
+        let response = try? JSONDecoder().decode(GitHubApiResponse.self, from: data)
         return response
     }
 }
