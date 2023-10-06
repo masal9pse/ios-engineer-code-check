@@ -11,11 +11,11 @@ import Foundation
 import XCTest
 
 class GitHubApiResponseTest: XCTestCase {
-    func test_定義したGitHubApiResponseがエラーなく変換されること() throws {
+    func test_定義したApiResponseがエラーなく変換されること() throws {
         // 静的ファイルのため特にエラー処理記載なし
         let bundlePath = Bundle.main.path(forResource: "jsons/one-item", ofType: "json")!
         let jsonData = try! String(contentsOfFile: bundlePath).data(using: .utf8)!
-        let decodeData = try JSONDecoder().decode(GitHubApiResponse.self, from: jsonData)
+        let decodeData = try JSONDecoder().decode(ApiResponse.self, from: jsonData)
 
         XCTAssertEqual(decodeData.totalCount, 1)
         XCTAssertEqual(decodeData.items[0].name, "Tetris")
