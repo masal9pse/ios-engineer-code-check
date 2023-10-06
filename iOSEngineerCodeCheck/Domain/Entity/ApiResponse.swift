@@ -1,5 +1,5 @@
 //
-//  GitHubApiResponse.swift
+//  ApiResponse.swift
 //  iOSEngineerCodeCheck
 //
 //  Created by 山本大翔 on 2022/05/23.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct GitHubApiResponse: Codable {
+struct ApiResponse: Codable {
     let totalCount: Int
     let items: [Item]
 

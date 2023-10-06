@@ -17,9 +17,9 @@ struct LaunchApp: App {
     }
 }
 
-// diをするクラスがviewにあるのは不自然
+// diをするクラスがviewにあるのは不自然なので修正する
 struct DI: View {
-    static let searchApiRepository = GitHubApiRepository()
+    static let searchApiRepository = GithubApiRepository()
     var body: some View {
         SearchPage(searchApiRepository: DI.searchApiRepository)
     }
