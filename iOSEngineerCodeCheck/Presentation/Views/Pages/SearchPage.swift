@@ -27,7 +27,7 @@ struct SearchPage: View {
                 if searchApiState.apiResponseList != nil {
                     List {
                         ForEach(searchApiState.apiResponseList!.items.indices, id: \.self) { index in
-                            NavigationLink(destination: DetailPage(item: (searchApiState.apiResponseList?.items[index])!)) {
+                            NavigationLink(destination: DetailPage(searchApiState: searchApiState, index: index)) {
                                 Text(searchApiState.apiResponseList!.items[index].fullName)
                             }
                         }
