@@ -14,7 +14,7 @@ struct DetailPage: View {
 
     var body: some View {
         // 詳細ページに遷移した時点で、apiResponseListがnullになることはないので強制アンラップで対処
-        let item = searchApiState.apiResponseList!.items[index]
+        let item = searchApiState.apiResponse!.items[index]
         AsyncImage(url: URL(string: item.owner?.avatarUrl ?? "")) { image in
             image.resizable().scaledToFit()
         } placeholder: {
