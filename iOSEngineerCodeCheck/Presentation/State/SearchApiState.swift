@@ -15,10 +15,10 @@ final class SearchApiState: ObservableObject {
         self.searchApiRepository = searchApiRepository
     }
 
-    @Published var apiResponseList: ApiResponse?
+    @Published var apiResponse: ApiResponse?
 
     func getGitHubApiResponse(searchedWord: String) async throws {
         let response = try await searchApiRepository.getApiResponse(searchedWord: searchedWord)
-        apiResponseList = response
+        apiResponse = response
     }
 }

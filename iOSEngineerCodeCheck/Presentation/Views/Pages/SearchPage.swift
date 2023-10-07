@@ -24,11 +24,11 @@ struct SearchPage: View {
                         try await searchApiState.getGitHubApiResponse(searchedWord: name)
                     }
                 }, name: $name, editting: $editting)
-                if searchApiState.apiResponseList != nil {
+                if searchApiState.apiResponse != nil {
                     List {
-                        ForEach(searchApiState.apiResponseList!.items.indices, id: \.self) { index in
-                            NavigationLink(destination: DetailPage(item: (searchApiState.apiResponseList?.items[index])!)) {
-                                Text(searchApiState.apiResponseList!.items[index].fullName)
+                        ForEach(searchApiState.apiResponse!.items.indices, id: \.self) { index in
+                            NavigationLink(destination: DetailPage(searchApiState: searchApiState, index: index)) {
+                                Text(searchApiState.apiResponse!.items[index].fullName)
                             }
                         }
                     }
