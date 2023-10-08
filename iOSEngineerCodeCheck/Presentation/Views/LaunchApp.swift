@@ -12,14 +12,7 @@ import SwiftUI
 struct LaunchApp: App {
     var body: some Scene {
         WindowGroup {
-            DI()
+            SearchPage().environmentObject(SearchApiState(searchApiRepository: GitHubApiRepository()))
         }
-    }
-}
-
-// diをするクラスがviewにあるのは不自然なので修正する
-struct DI: View {
-    var body: some View {
-        SearchPage().environmentObject(SearchApiState(searchApiRepository: GitHubApiRepository()))
     }
 }
