@@ -34,3 +34,9 @@ struct SearchPage: View {
         }
     }
 }
+
+struct SearchPage_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchPage().environmentObject(SearchApiState(searchApiRepository: GitHubApiRepository()))
+    }
+}
