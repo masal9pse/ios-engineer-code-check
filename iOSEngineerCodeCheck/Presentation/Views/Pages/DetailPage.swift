@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct DetailPage: View {
-    @ObservedObject var searchApiState: SearchApiState
+    @EnvironmentObject var searchApiState: SearchApiState
     let index: Int
 
     var body: some View {

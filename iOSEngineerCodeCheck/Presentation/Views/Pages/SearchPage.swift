@@ -10,11 +10,7 @@ import SwiftUI
 struct SearchPage: View {
     @State private var name = ""
     @State private var editting = false
-    @ObservedObject var searchApiState: SearchApiState
-
-    init(searchApiRepository: SearchApiRepositoryProtocol) {
-        searchApiState = SearchApiState(searchApiRepository: searchApiRepository)
-    }
+    @EnvironmentObject var searchApiState: SearchApiState
 
     var body: some View {
         NavigationView {
@@ -27,7 +23,7 @@ struct SearchPage: View {
                 if searchApiState.apiResponse != nil {
                     List {
                         ForEach(searchApiState.apiResponse!.items.indices, id: \.self) { index in
-                            NavigationLink(destination: DetailPage(searchApiState: searchApiState, index: index)) {
+                            NavigationLink(destination: DetailPage(index: index)) {
                                 Text(searchApiState.apiResponse!.items[index].fullName)
                             }
                         }
