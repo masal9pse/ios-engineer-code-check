@@ -19,8 +19,7 @@ struct LaunchApp: App {
 
 // diをするクラスがviewにあるのは不自然なので修正する
 struct DI: View {
-    static let searchApiRepository = GitHubApiRepository()
     var body: some View {
-        SearchPage(searchApiRepository: DI.searchApiRepository)
+        SearchPage().environmentObject(SearchApiState(searchApiRepository: GitHubApiRepository()))
     }
 }
