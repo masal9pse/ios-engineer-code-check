@@ -9,13 +9,13 @@
 import Foundation
 
 class GitHubApiRepository: SearchApiRepositoryProtocol {
-    func getApiResponse(searchedWord: String) async throws -> ApiResponse? {
+    func getApiResponse(searchedWord: String) async throws -> ApiResponse {
         let urlString = "https://api.github.com/search/repositories?q=\(searchedWord)"
         let encodeUrlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let encodeUrl = URL(string: encodeUrlString!)!
         let (data, _) = try await URLSession.shared.data(from: encodeUrl, delegate:
             nil)
-        let response = try? JSONDecoder().decode(ApiResponse.self, from: data)
+        let response = try JSONDecoder().decode(ApiResponse.self, from: data)
         return response
     }
 }

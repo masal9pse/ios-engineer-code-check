@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SearchApiRepositoryProtocol {
-    func getApiResponse(searchedWord: String) async throws -> ApiResponse?
+    func getApiResponse(searchedWord: String) async throws -> ApiResponse
 }
