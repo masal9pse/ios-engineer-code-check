@@ -39,7 +39,7 @@ struct SearchPage_Previews: PreviewProvider {
     static var previews: some View {
         SearchPage().environmentObject({ () -> SearchApiState in
             let searchApiState = SearchApiState(searchApiRepository: GitHubApiRepository())
-            searchApiState.apiResponse = ApiResponse(totalCount: 1, items: [Item(name: "aaaa", fullName: "aaaa", stargazersCount: 1, watchersCount: 2, forksCount: 3, openIssuesCount: 3, language: "ja", owner: nil)])
+            searchApiState.apiResponse = ApiResponse(totalCount: 1, items: [Item(name: "Flutter Sample App", fullName: "Sample App", stargazersCount: 1, watchersCount: 2, forksCount: 3, openIssuesCount: 3, language: "ja", owner: nil)])
             return searchApiState
         }())
     }
