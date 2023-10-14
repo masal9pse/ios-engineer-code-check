@@ -26,7 +26,7 @@ struct Item: Codable {
     let forksCount: Int
     let openIssuesCount: Int
     let language: String?
-    let owner: Owner?
+    let owner: Owner
 
     enum CodingKeys: String, CodingKey {
         case name
@@ -41,7 +41,7 @@ struct Item: Codable {
 }
 
 struct Owner: Codable {
-    let avatarUrl: String?
+    let avatarUrl: String
     enum CodingKeys: String, CodingKey {
         case avatarUrl = "avatar_url"
     }

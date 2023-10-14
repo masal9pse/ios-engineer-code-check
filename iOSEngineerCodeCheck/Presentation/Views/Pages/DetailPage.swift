@@ -14,12 +14,18 @@ struct DetailPage: View {
     var body: some View {
         // 詳細ページに遷移した時点で、apiResponseListがnullになることはないので強制アンラップで対処
         let item = searchApiState.apiResponse!.items[index]
-        
-        // 画像のパスが空文字だった場合の対応が抜けている
-        AsyncImage(url: URL(string: item.owner?.avatarUrl ?? "")) { image in
-            image.resizable().scaledToFit()
-        } placeholder: {
-            ProgressView()
+
+        AsyncImage(url: URL(string: item.owner.avatarUrl)) { phase in
+            switch phase {
+            case let .success(image):
+                image.resizable().scaledToFit()
+            case .failure:
+                Image("no_image")
+            case .empty:
+                ProgressView()
+            @unknown default:
+                EmptyView()
+            }
         }
         Text(item.fullName).padding(.top, 30).padding(.bottom, 20)
         HStack {
@@ -41,7 +47,7 @@ struct DetailPage_Previews: PreviewProvider {
     static var previews: some View {
         DetailPage(index: 0).environmentObject({ () -> SearchApiState in
             let searchApiState = SearchApiState(searchApiRepository: GitHubApiRepository())
-            searchApiState.apiResponse = ApiResponse(totalCount: 1, items: [Item(name: "Flutter Sample App", fullName: "Sample App", stargazersCount: 1, watchersCount: 2, forksCount: 3, openIssuesCount: 3, language: "ja", owner: nil)])
+            searchApiState.apiResponse = ApiResponse(totalCount: 1, items: [Item(name: "Flutter Sample App", fullName: "Sample App", stargazersCount: 1, watchersCount: 2, forksCount: 3, openIssuesCount: 3, language: "ja", owner: Owner(avatarUrl: "https://avatars.githubusercontent.com/u/84199788?v=4"))])
             return searchApiState
         }())
     }
