@@ -19,7 +19,9 @@ final class SearchApiState: ObservableObject {
 
     func getGitHubApiResponse(searchedWord: String) async throws {
         let response = try await searchApiRepository.getApiResponse(searchedWord: searchedWord)
-        apiResponse = response
+        DispatchQueue.main.async {
+            self.apiResponse = response
+        }
     }
 
     static var preview = ApiResponse(totalCount: 3, items:
