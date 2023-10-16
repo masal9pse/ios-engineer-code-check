@@ -25,6 +25,36 @@ final class SearchApiState: ObservableObject {
     }
 
     static var preview = ApiResponse(totalCount: 3, items:
-        [Item(name: "App1", fullName: "Sample App1", stargazersCount: 1, watchersCount: 2, forksCount: 3, openIssuesCount: 3, language: "ja", owner: Owner(avatarUrl: "https://avatars.githubusercontent.com/u/84199788?v=4")),
-         Item(name: "App2", fullName: "Sample App2", stargazersCount: 4, watchersCount: 2, forksCount: 3, openIssuesCount: 3, language: "en", owner: Owner(avatarUrl: "https://example.com/avatar2.png")), Item(name: "App3", fullName: "Sample App3", stargazersCount: 4, watchersCount: 33, forksCount: 3, openIssuesCount: 3, language: "en", owner: Owner(avatarUrl: "https://example.com/avatar3.png"))])
+        [
+            Item(
+                name: "App1",
+                fullName: "Sample App1",
+                stargazersCount: 1,
+                watchersCount: 2,
+                forksCount: 3,
+                openIssuesCount: 3,
+                language: "ja",
+                owner: Owner(avatarUrl: "https://avatars.githubusercontent.com/u/84199788?v=4")
+            ),
+            Item(
+                name: "App2",
+                fullName: "Sample App2",
+                stargazersCount: 1,
+                watchersCount: 2,
+                forksCount: 3,
+                openIssuesCount: 3,
+                language: "ja",
+                owner: Owner(avatarUrl: "https://example.com/avatar2.png")
+            ),
+            Item(
+                name: "App3",
+                fullName: "Sample App3",
+                stargazersCount: 1,
+                watchersCount: 2,
+                forksCount: 3,
+                openIssuesCount: 3,
+                language: "ja",
+                owner: Owner(avatarUrl: "https://example.com/avatar3.png")
+            )
+        ])
 }

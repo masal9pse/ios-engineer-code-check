@@ -40,6 +40,7 @@ struct SearchPage_Previews: PreviewProvider {
         SearchPage().environmentObject({ () -> SearchApiState in
             let searchApiState = SearchApiState(searchApiRepository: GitHubApiRepository())
             searchApiState.apiResponse = SearchApiState.preview
+            print("test")
             return searchApiState
         }())
     }

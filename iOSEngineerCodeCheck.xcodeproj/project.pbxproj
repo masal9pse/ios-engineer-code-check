@@ -293,6 +293,7 @@
 				BFD945D9244DC5E80012785A /* Resources */,
 				2827226C283197010076705A /* ShellScript */,
 				28B9E4B42A9D2A4100F34055 /* ShellScript */,
+				28F48D942ADDABA000B80F1A /* ShellScript */,
 			);
 			buildRules = (
 				281073762A9D2584003B7F41 /* PBXBuildRule */,
@@ -450,6 +451,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "cd BuildTools\n\nxcrun --sdk macosx swift build -c release \\\n--package-path .build/checkouts/SwiftFormat \\\n--product swiftformat\n\n.build/checkouts/SwiftFormat/.build/release/swiftformat $SRCROOT --config $SRCROOT/.swiftformat --swiftversion 5.7\n\n";
+		};
+		28F48D942ADDABA000B80F1A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun --sdk macosx swift build -c release --package-path BuildTools\n\nxcrun --sdk macosx swift build -c release \\\n--package-path ./BuildTools/.build/checkouts/SwiftLint \\\n--product swiftlint\n\n./BuildTools/.build/checkouts/SwiftLint/.build/release/swiftlint lint --config $SRCROOT/.swiftlint.yml\n";
 		};
 		2FE4DECFE0452C22AD28C0F8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
