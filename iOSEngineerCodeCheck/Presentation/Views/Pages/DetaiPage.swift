@@ -1,5 +1,5 @@
 //
-//  DetailPage.swift
+//  DetaiPage.swift
 //  iOSEngineerCodeCheck
 //
 //  Created by 山本大翔 on 2023/08/27.

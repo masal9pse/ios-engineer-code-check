@@ -13,10 +13,10 @@
 		28519E4E2A9A73DA003488AF /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28519E4D2A9A73DA003488AF /* SearchPage.swift */; };
 		28519E6C2A9A7D83003488AF /* LaunchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28519E6B2A9A7D83003488AF /* LaunchApp.swift */; };
 		28519E702A9A8A1A003488AF /* SearchApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28519E6F2A9A8A1A003488AF /* SearchApiRepository.swift */; };
-		28519E722A9AA11E003488AF /* DetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28519E712A9AA11E003488AF /* DetailPage.swift */; };
 		28609A762AD1EFD900E5BF94 /* GithubApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28609A752AD1EFD900E5BF94 /* GithubApiRepository.swift */; };
 		28609A772AD1EFD900E5BF94 /* GithubApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28609A752AD1EFD900E5BF94 /* GithubApiRepository.swift */; };
 		28609A782AD1EFD900E5BF94 /* GithubApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28609A752AD1EFD900E5BF94 /* GithubApiRepository.swift */; };
+		2871AE092B7FB6E10055C49A /* DetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871AE082B7FB6E10055C49A /* DetailPage.swift */; };
 		28D52E2C283B933E00433CE6 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D52E2B283B933E00433CE6 /* ApiResponse.swift */; };
 		28EA612E2AD07DA7008A59D5 /* jsons in Resources */ = {isa = PBXBuildFile; fileRef = 28EA612D2AD07DA7008A59D5 /* jsons */; };
 		28EA612F2AD07DA7008A59D5 /* jsons in Resources */ = {isa = PBXBuildFile; fileRef = 28EA612D2AD07DA7008A59D5 /* jsons */; };
@@ -70,8 +70,8 @@
 		28519E4D2A9A73DA003488AF /* SearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage.swift; sourceTree = "<group>"; };
 		28519E6B2A9A7D83003488AF /* LaunchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchApp.swift; sourceTree = "<group>"; };
 		28519E6F2A9A8A1A003488AF /* SearchApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchApiRepository.swift; sourceTree = "<group>"; };
-		28519E712A9AA11E003488AF /* DetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage.swift; sourceTree = "<group>"; };
 		28609A752AD1EFD900E5BF94 /* GithubApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubApiRepository.swift; sourceTree = "<group>"; };
+		2871AE082B7FB6E10055C49A /* DetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage.swift; sourceTree = "<group>"; };
 		28D52E2B283B933E00433CE6 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		28EA612D2AD07DA7008A59D5 /* jsons */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jsons; sourceTree = SOURCE_ROOT; };
 		28F48D892ADB313400B80F1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				28519E4D2A9A73DA003488AF /* SearchPage.swift */,
-				28519E712A9AA11E003488AF /* DetailPage.swift */,
+				2871AE082B7FB6E10055C49A /* DetailPage.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -292,8 +292,7 @@
 				BFD945D8244DC5E80012785A /* Frameworks */,
 				BFD945D9244DC5E80012785A /* Resources */,
 				2827226C283197010076705A /* ShellScript */,
-				28B9E4B42A9D2A4100F34055 /* ShellScript */,
-				28F48D942ADDABA000B80F1A /* ShellScript */,
+				28B9E4B42A9D2A4100F34055 /* Run Script */,
 			);
 			buildRules = (
 				281073762A9D2584003B7F41 /* PBXBuildRule */,
@@ -435,7 +434,7 @@
 			shellPath = /bin/sh;
 			shellScript = "cd BuildTools\n\nxcrun --sdk macosx swift build -c release\n";
 		};
-		28B9E4B42A9D2A4100F34055 /* ShellScript */ = {
+		28B9E4B42A9D2A4100F34055 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -444,6 +443,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -451,23 +451,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "cd BuildTools\n\nxcrun --sdk macosx swift build -c release \\\n--package-path .build/checkouts/SwiftFormat \\\n--product swiftformat\n\n.build/checkouts/SwiftFormat/.build/release/swiftformat $SRCROOT --config $SRCROOT/.swiftformat --swiftversion 5.7\n\n";
-		};
-		28F48D942ADDABA000B80F1A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "xcrun --sdk macosx swift build -c release --package-path BuildTools\n\nxcrun --sdk macosx swift build -c release \\\n--package-path ./BuildTools/.build/checkouts/SwiftLint \\\n--product swiftlint\n\n./BuildTools/.build/checkouts/SwiftLint/.build/release/swiftlint lint --config $SRCROOT/.swiftlint.yml\n";
 		};
 		2FE4DECFE0452C22AD28C0F8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -545,8 +528,8 @@
 				28519E4B2A9A6938003488AF /* SearchApiState.swift in Sources */,
 				28519E6C2A9A7D83003488AF /* LaunchApp.swift in Sources */,
 				28519E702A9A8A1A003488AF /* SearchApiRepository.swift in Sources */,
+				2871AE092B7FB6E10055C49A /* DetailPage.swift in Sources */,
 				281073722A9AD4D7003B7F41 /* SearchFormField.swift in Sources */,
-				28519E722A9AA11E003488AF /* DetailPage.swift in Sources */,
 				28519E4E2A9A73DA003488AF /* SearchPage.swift in Sources */,
 				28D52E2C283B933E00433CE6 /* ApiResponse.swift in Sources */,
 				28609A762AD1EFD900E5BF94 /* GithubApiRepository.swift in Sources */,
